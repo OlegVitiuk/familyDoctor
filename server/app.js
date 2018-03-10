@@ -1,13 +1,18 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import * as db from './utils/databaseUtils';
-import {serverPort} from '../etc/config';
+import {serverPort} from '../src/etc/config';
 
 db.setUpConnection();
 
 const app = express();
 
-app.use(bodyParser.json());
+app.use((req, res, next) => {
+    bodyParser.json();
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 app.get('/users', (req, res) => {
     db.listOfUsers().then(data => res.send(data));

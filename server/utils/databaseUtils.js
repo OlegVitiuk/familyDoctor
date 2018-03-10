@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 import '../models/User';
-import config from './../../etc/config';
+import config from '../../src/etc/config';
 
 const User = mongoose.model('User');
 
