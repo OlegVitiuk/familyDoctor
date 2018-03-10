@@ -2,8 +2,12 @@
   "name": "diplom-frontend",
   "version": "0.1.0",
   "private": true,
+  "main": "webpack.config.js",
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
     "history": "^4.7.2",
+    "mongoose": "^5.0.9",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
@@ -17,6 +21,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "nodemon --exec babel-node --presets=es2015  -- server/app.js"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1"
   }
 }
