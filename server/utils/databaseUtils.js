@@ -1,18 +1,19 @@
 import mongoose from 'mongoose';
 
 import '../models/User';
+import config from './../../etc/config';
 
 const User = mongoose.model('User');
 
 export function setUpConnection() {
-    mongoose.connect('mongodb://localhost/diploma');
+    mongoose.connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`);
 }
 
-export function listOfUsers(){
+export function listOfUsers() {
     return User.find();
 }
 
-export function createUser(data){
+export function createUser(data) {
     const user = new User({
         title: data.title,
         image: data.image,
@@ -24,6 +25,6 @@ export function createUser(data){
     return user.save();
 }
 
-export function deleteUser(id){
+export function deleteUser(id) {
     return User.findById(id).remove();
 }
