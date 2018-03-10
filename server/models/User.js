@@ -8,6 +8,6 @@ const UserSchema = new Schema({
     description: {type: String},
     price: {type: Number},
     averageResponse: {type: Number}
-},{collection: 'User'});
+},{collection: 'Users'});
 
 const User = mongoose.model('User',UserSchema);

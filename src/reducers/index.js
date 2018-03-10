@@ -3,14 +3,18 @@ import { routerReducer } from 'react-router-redux'
 
 import {GET_USERS} from "../constants";
 
-const user  = (state = [], action) => {
+const initialState = {
+    users: [],
+    clinics: []
+}
+
+const users  = (state = initialState, action) => {
     switch (action.type) {
         case GET_USERS:
             return {
-                ...state,
-                users: action.items
+                ...state.users,
+                items: action.items
             }
-
         default:
             return state
     }
@@ -18,5 +22,5 @@ const user  = (state = [], action) => {
 
 export default combineReducers({
     routing: routerReducer,
-    user
+    users
 })

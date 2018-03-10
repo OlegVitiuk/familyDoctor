@@ -1,0 +1,19 @@
+.menu{
+  display: flex;
+  margin-right: 10px;
+
+  &__item{
+    transition: all 0.2s;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 400;
+    display: block;
+    text-decoration: none;
+    color: #212121;
+    padding: 25px 0;
+  }
+}
+
+.info{
+
+}

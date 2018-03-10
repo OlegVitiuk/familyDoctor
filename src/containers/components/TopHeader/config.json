@@ -1,0 +1,22 @@
+{
+  "menu": [
+    {"name": "Врачи",
+      "route": "doctors"
+    },
+    {"name": "Клиники",
+      "route": "clinics"
+    },
+    {"name": "Диагностика",
+      "route": "diagnostics"
+    },
+    {"name": "Лаборатории",
+      "route": "laboratory"
+    },
+    {"name": "Блог",
+      "route": "blog"
+    },
+    {"name": "Акции",
+      "route": "Promotions"
+    }
+  ]
+}
