@@ -4,7 +4,6 @@ import { routerReducer } from 'react-router-redux'
 import {GET_USERS} from "../constants";
 
 const user  = (state = [], action) => {
-    console.log(action);
     switch (action.type) {
         case GET_USERS:
             return {
