@@ -13,7 +13,6 @@ app.get('/users', (req, res) => {
     db.listOfUsers().then(data => res.send(data));
 });
 
-
 app.post('/users', (req, res) => {
     db.createUser(req.body).then(data => res.send(data));
 });
