@@ -33,6 +33,9 @@ export default class TopHeader extends React.Component {
                          }
                      </ul>
                 </div>
+                <div className="topheader__filter">
+
+                </div>
             </div>
         );
     }
