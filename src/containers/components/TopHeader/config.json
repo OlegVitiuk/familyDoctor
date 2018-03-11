@@ -18,5 +18,16 @@
     {"name": "Акции",
       "route": "Promotions"
     }
+  ],
+  "posibilities": [
+    {"name": "Регистрация",
+      "route": "registration"
+    },
+    {"name": "Вход",
+      "route": "login"
+    },
+    {"name": "Онлайн-запись",
+      "route": "Online recording"
+    }
   ]
 }
