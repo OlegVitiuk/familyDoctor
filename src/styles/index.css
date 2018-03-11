@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -98,5 +99,90 @@ table {
       margin-right: 10px;
       cursor: pointer; }
 
+.home__main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: url("https://ucarecdn.com/42d1eb1b-85bc-446f-ba5c-6ff10bafeb9d/screen_main_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  min-height: 500px;
+  padding-top: 54px; }
+
+.home__search {
+  display: inline-block;
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  background-position: 20px center;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  padding: 20px;
+  width: 50%;
+  outline: none;
+  -webkit-appearance: none;
+  color: #212121; }
+
+.home__popular {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px; }
+  .home__popular-text {
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 12px; }
+  .home__popular-list {
+    display: flex;
+    width: 60%;
+    flex-wrap: wrap;
+    justify-content: center; }
+    .home__popular-list-item {
+      display: inline-block;
+      font-size: 13px;
+      line-height: 20px;
+      font-weight: 600;
+      padding: 5px 20px;
+      border-radius: 100px;
+      background-color: #0F86E8;
+      margin-right: 10px;
+      margin-top: 5px;
+      transition: 0.2s;
+      cursor: pointer;
+      margin-bottom: 5px;
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.8); }
+
+.main__welcome {
+  padding: 45px 50px 35px;
+  text-align: left; }
+
+.main__welcome, .main__greet {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.7);
+  position: relative;
+  text-align: center; }
+
+.main__subtitle {
+  font-size: 22px;
+  line-height: 27px;
+  font-weight: 300;
+  display: inline-block;
+  width: 80%;
+  padding-top: 15px;
+  margin: 0 auto;
+  text-align: center; }
+
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif; }

@@ -1,0 +1,25 @@
+{
+  "popularItems": [
+    {"name": "Терапевт",
+      "route": "/doctors/terapevt"
+    },
+    {"name": "Гастроэнтерология",
+      "route": "/clinics/gastroenterologiya"
+    },
+    {"name": "Кардиология",
+      "route": "/clinics/kardiologiya"
+    },
+    {"name": "Стоматология",
+      "route": "/clinics/stomatologiya"
+    },
+    {"name": "Хирургия",
+      "route": "/clinics/hirurgiya"
+    },
+    {"name": "Косметология",
+      "route": "/clinics/kosmetologiya"
+    },
+    {"name": "Дерматология",
+      "route": "/clinics/dermatologiya"
+    }
+  ]
+}
