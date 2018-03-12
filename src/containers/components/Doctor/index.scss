@@ -1,0 +1,148 @@
+.doc{
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 30px 0 0;
+  margin-bottom: 15px;
+  border: 1px solid #e0e0e0;
+  flex-direction: column;
+
+  &__header{
+    display: flex;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0 30px 20px;
+
+    &-img{
+      margin-right: 30px;
+      text-align: center;
+      width: 100px;
+      position: relative;
+    }
+
+    &-content{
+      display: flex;
+      flex-direction: column;
+
+      &-name{
+        text-decoration: none;
+        transition: all 0.2s;
+        cursor: pointer;
+        display: inline;
+        font-size: 26px;
+        line-height: 32px;
+        font-weight: 600;
+        color: #1e88e5;
+      }
+
+      &-type{
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 600;
+        color: #212121;
+      }
+
+      &-status{
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 600;
+        color: #818181;
+      }
+    }
+  }
+
+  &__info{
+    display: flex;
+    position: relative;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px;
+    padding-right: 150px;
+    padding-left: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    float: left;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+
+    &-clinic{
+      display: flex;
+      flex-direction: column;
+
+      &-location{
+        display: flex;
+
+        &-text{
+          color: #212121;
+        }
+        &-link{
+          color: #818181;
+        }
+
+        &-metroText{
+          color: #212121;
+          font-size: 14px;
+          line-height: 17px;
+          font-weight: 400;
+        }
+        &-metroLink{
+          color: #325da4;
+          font-size: 14px;
+          line-height: 24px;
+          font-weight: 600;
+        }
+      }
+
+      &-name{
+        margin-bottom: 12px;
+        display: inline-block;
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        transition: all 0.2s;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 600;
+      }
+      &-type{
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 600;
+        color: #212121;
+      }
+    }
+
+    &-price{
+      display: flex;
+
+      &-text{
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: bold;
+        color: #212121;
+        text-align: right;
+        top: 0;
+        display: inline-block;
+        right: 0;
+        position: relative;
+      }
+      &-button{
+        padding: 0 20px;
+        color: #fff;
+        background-color: #82C933;
+        transition: all 0.2s;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 16px;
+        line-height: 40px;
+        font-weight: 400;
+        height: 40px;
+        /* color: #ffffff; */
+        border-radius: 3px;
+        position: relative;
+        /* bottom: 10px; */
+        margin-left: 15px;
+        text-decoration: none;
+      }
+    }
+  }
+
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import Doctor from '../../components/Doctor/index';
+import './index.scss';
 
 export default class Doctors extends React.Component {
 

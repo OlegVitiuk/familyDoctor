@@ -99,6 +99,132 @@ table {
       margin-right: 10px;
       cursor: pointer; }
 
+.doc {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 30px 0 0;
+  margin-bottom: 15px;
+  border: 1px solid #e0e0e0;
+  flex-direction: column; }
+  .doc__header {
+    display: flex;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0 30px 20px; }
+    .doc__header-img {
+      margin-right: 30px;
+      text-align: center;
+      width: 100px;
+      position: relative; }
+    .doc__header-content {
+      display: flex;
+      flex-direction: column; }
+      .doc__header-content-name {
+        text-decoration: none;
+        transition: all 0.2s;
+        cursor: pointer;
+        display: inline;
+        font-size: 26px;
+        line-height: 32px;
+        font-weight: 600;
+        color: #1e88e5; }
+      .doc__header-content-type {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 600;
+        color: #212121; }
+      .doc__header-content-status {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 600;
+        color: #818181; }
+  .doc__info {
+    display: flex;
+    position: relative;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px;
+    padding-right: 150px;
+    padding-left: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    float: left;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s; }
+    .doc__info-clinic {
+      display: flex;
+      flex-direction: column; }
+      .doc__info-clinic-location {
+        display: flex; }
+        .doc__info-clinic-location-text {
+          color: #212121; }
+        .doc__info-clinic-location-link {
+          color: #818181; }
+        .doc__info-clinic-location-metroText {
+          color: #212121;
+          font-size: 14px;
+          line-height: 17px;
+          font-weight: 400; }
+        .doc__info-clinic-location-metroLink {
+          color: #325da4;
+          font-size: 14px;
+          line-height: 24px;
+          font-weight: 600; }
+      .doc__info-clinic-name {
+        margin-bottom: 12px;
+        display: inline-block;
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        transition: all 0.2s;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 600; }
+      .doc__info-clinic-type {
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 600;
+        color: #212121; }
+    .doc__info-price {
+      display: flex; }
+      .doc__info-price-text {
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: bold;
+        color: #212121;
+        text-align: right;
+        top: 0;
+        display: inline-block;
+        right: 0;
+        position: relative; }
+      .doc__info-price-button {
+        padding: 0 20px;
+        color: #fff;
+        background-color: #82C933;
+        transition: all 0.2s;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 16px;
+        line-height: 40px;
+        font-weight: 400;
+        height: 40px;
+        /* color: #ffffff; */
+        border-radius: 3px;
+        position: relative;
+        /* bottom: 10px; */
+        margin-left: 15px;
+        text-decoration: none; }
+
+.doc__list {
+  box-sizing: border-box;
+  padding: 20px 30px;
+  background-color: #ececec;
+  width: 66.5%;
+  height: 100%;
+  min-height: 756px;
+  position: relative;
+  padding-bottom: 90px;
+  z-index: 0; }
+
 .home__main {
   display: flex;
   justify-content: center;
