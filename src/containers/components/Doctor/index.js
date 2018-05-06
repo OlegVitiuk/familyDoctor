@@ -14,7 +14,7 @@ export default class Doctor extends React.Component {
                         <span className="doc__header-content-status">Врач высшей категории Доктор медицинских наук</span>
                     </div>
                 </div>
-                <div className="doc__info">
+                <div className='doc__info'>
                     <div className="doc__info-clinic">
                         <span className="doc__info-clinic-name">Клиника Академика Земского</span>
                         <span className="doc__info-clinic-type">проспект Голосеевский, 59б</span>

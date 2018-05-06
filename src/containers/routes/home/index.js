@@ -1,11 +1,20 @@
-import React from 'react'
-import {connect} from 'react-redux'
+import React from 'react';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 import {getUsers} from '../../../actions/userActions';
 import { Link } from 'react-router-dom';
 import './index.scss';
 import config from './config';
 
 class Home extends React.Component {
+
+    static propTypes ={
+      dispatch: PropTypes.func
+    };
+
+    componentWillMount(){
+        this.props.dispatch(getUsers());
+    }
 
     render() {
         return (
