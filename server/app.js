@@ -1,11 +1,15 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import path from 'path';
 import * as db from './utils/databaseUtils';
 import {serverPort} from '../src/etc/config';
 
 db.setUpConnection();
 
 const app = express();
+app.use(bodyParser.json());
+
+app.use(express.static(path.resolve(__dirname,'build')));
 
 app.use((req, res, next) => {
     bodyParser.json();
