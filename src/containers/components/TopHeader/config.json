@@ -11,12 +11,6 @@
     },
     {"name": "Лаборатории",
       "route": "laboratory"
-    },
-    {"name": "Блог",
-      "route": "blog"
-    },
-    {"name": "Акции",
-      "route": "Promotions"
     }
   ],
   "posibilities": [
@@ -25,9 +19,6 @@
     },
     {"name": "Вход",
       "route": "login"
-    },
-    {"name": "Онлайн-запись",
-      "route": "Online recording"
     }
   ]
 }

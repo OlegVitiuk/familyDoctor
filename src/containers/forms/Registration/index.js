@@ -24,7 +24,6 @@ class Login extends React.Component {
     renderField = (field, i) => <Field {...field} key={i} />;
 
     render() {
-
         const {history} = this.props;
 
         return (
@@ -32,7 +31,7 @@ class Login extends React.Component {
                 <form onSubmit={()=>{}}
                       className="authorization-form">
                     <div className="authorization-form__title">
-                         Вхід
+                        Реєстрація
                     </div>
                     <div className="form__close" onClick={()=>history.push(`${history.location.pathname}`)} />
                     {fields.map(this.renderField)}
@@ -40,7 +39,7 @@ class Login extends React.Component {
                         <div className="authorization-form__error">Поле обов'язкове</div>
                     )}
                     <div>
-                        <button type="submit" className="authorization-form__button"> Ввойти </button>
+                        <button type="submit" className="authorization-form__button"> Зареєструватись </button>
                     </div>
                 </form>
             </div>

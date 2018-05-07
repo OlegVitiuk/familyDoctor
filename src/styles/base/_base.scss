@@ -2,3 +2,9 @@ body{
   box-sizing: border-box;
   font-family: 'Josefin Sans', sans-serif;
 }
+
+.file-form__blackout {
+  @extend %overlay;
+  overflow: auto;
+}
+

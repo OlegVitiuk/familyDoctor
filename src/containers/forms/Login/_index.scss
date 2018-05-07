@@ -1,1 +1,16 @@
 @import "authorized-block";
+
+.login-form__label {
+  font-size: $font-size-smaller;
+  margin: 21px 0 8px;
+}
+
+.login-form__input {
+  @extend %input;
+  @extend %input-color;
+  width: 300px;
+}
+
+.login-form__input-error {
+  @extend %form-error;
+}
