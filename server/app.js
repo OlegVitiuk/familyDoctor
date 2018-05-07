@@ -30,6 +30,7 @@ app.delete('/users/:id', (req, res) => {
     db.deleteUser(req.params.id).then(data => res.send(data));
 });
 
-const server = app.listen(serverPort, () => {
-    console.log(`server is running on port ${serverPort}`);
+const server = app.listen(process.env.PORT || 8080, () => {
+    const port = server.address().port;
+    console.log("App now running on port", port);
 });

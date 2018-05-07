@@ -6,7 +6,8 @@ import config from '../../src/etc/config';
 const User = mongoose.model('User');
 
 export function setUpConnection() {
-    mongoose.connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`);
+    //mongoose.connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`);
+    mongoose.connect('mongodb://test:1@ds117730.mlab.com:17730/diploma')
 }
 
 export function listOfUsers() {
