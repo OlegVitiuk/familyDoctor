@@ -23,7 +23,7 @@ export default class TopHeader extends React.Component {
                              alt="logo"/>
                         <div className="topheader__info-call-item topheader__info-call-form">Обратный звонок</div>
                         <span className="topheader__info-call-item">0956289359</span>
-                        <div className="topheader__info-call-item topheader__info-call-form">Бесплатно</div>
+                        <div className="topheader__info-call-item topheader__info-call-form">Небесплатно</div>
                     </div>
                     <div className='topheader__info-search'>
                         <div className="topheader__info-call-item topheader__info-call-form">Киев</div>
