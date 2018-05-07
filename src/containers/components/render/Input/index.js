@@ -1,7 +1,5 @@
 import React from 'react';
-//import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
-//import inputsForAddingTags from './config';
 
 class Input extends React.Component {
   static propTypes = {
@@ -11,7 +9,6 @@ class Input extends React.Component {
     addTag: PropTypes.func,
     type: PropTypes.string,
     placeholder: PropTypes.string,
-    //intl: intlShape.isRequired,
     className: PropTypes.string,
   };
 
@@ -19,38 +16,9 @@ class Input extends React.Component {
     input: {},
     label: '',
     meta: {},
-    addTag: () => {},
     type: '',
     placeholder: '',
     className: '',
-  };
-
-  constructor({ props, intl }) {
-    super(props);
-    this.intl = intl;
-    //this.intlPlaceholder = props && this.setPlaceholder(props.placeholder);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (
-      nextProps.placeholder &&
-      this.props.placeholder !== nextProps.placeholder
-    ) {
-      this.intlPlaceholder = this.setPlaceholder(nextProps.placeholder);
-    }
-  }
-
-  setPlaceholder = placeholder =>
-    (placeholder ? this.intl.formatMessage({ id: placeholder }) : null);
-
-  limitationForNumbers = (name) => {
-    if (name === 'certainty') {
-      return {
-        min: 0,
-        max: 100,
-      };
-    }
-    return null;
   };
 
   render() {
@@ -68,7 +36,6 @@ class Input extends React.Component {
         </div>
         <div className="form__wrapper">
             <input {...input}
-              {...this.limitationForNumbers(input.name)}
               type={type}
               className={`${className
                 ? `${className}_input`

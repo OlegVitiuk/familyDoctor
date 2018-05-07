@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux'
-import { routerReducer } from 'react-router-redux'
+import { routerReducer } from 'react-router-redux';
+import { reducer as formReducer } from 'redux-form';
 
 import {GET_USERS} from "../constants";
 
@@ -22,5 +23,6 @@ const users  = (state = initialState, action) => {
 
 export default combineReducers({
     routing: routerReducer,
+    form: formReducer,
     users
 })

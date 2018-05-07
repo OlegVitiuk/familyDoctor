@@ -8,18 +8,12 @@ import fields from './config';
 
 class Login extends React.Component {
     static propTypes = {
-        ...propTypes,
         history: PropTypes.object,
-        //activeRequest: PropTypes.string,
     };
 
-    // onSubmit = (values, dispatch) =>
-    //     dispatch(handleLogin(values)).then(
-    //         () => this.props.history.push('/'),
-    //         () => {
-    //             throw new SubmissionError({ _error: 'login.error' });
-    //         }
-    //     );
+    onSubmit = (values, dispatch) => {
+        console.log(values);
+    }
 
     renderField = (field, i) => <Field {...field} key={i} />;
 
@@ -28,26 +22,26 @@ class Login extends React.Component {
         const {history} = this.props;
 
         return (
-            <div className="authorization-block">
-                <form onSubmit={()=>{}}
-                      className="authorization-form">
-                    <div className="authorization-form__title">
+                <form onSubmit={this.props.handleSubmit(this.onSubmit)}
+                      className="login-form">
+                    <div className="login-form__title">
                          Вхід
                     </div>
                     <div className="form__close" onClick={()=>history.push(`${history.location.pathname}`)} />
                     {fields.map(this.renderField)}
                     {this.props.error && (
-                        <div className="authorization-form__error">Поле обов'язкове</div>
+                        <div className="login-form__error">Поле обов'язкове</div>
                     )}
                     <div>
-                        <button type="submit" className="authorization-form__button"> Ввойти </button>
+                        <button type="submit" className="login-form__btn"> Ввойти </button>
                     </div>
                 </form>
-            </div>
         );
     }
 }
 
 export default (reduxForm({
     form: 'login',
+    destroyOnUnmount: false,
+    forceUnregisterOnUnmount: true,
 })(Login));

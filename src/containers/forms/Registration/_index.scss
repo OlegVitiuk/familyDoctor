@@ -1,0 +1,30 @@
+.registration-form {
+  @extend %form;
+  width: 300px;
+}
+
+.registration-form__title {
+  @extend %form-title;
+  text-align: left;
+}
+
+.registration-form__label {
+  font-size: $font-size-smaller;
+  margin: 21px 0 8px;
+}
+
+.registration-form__input {
+  @extend %input;
+  @extend %input-color;
+  width: 300px;
+}
+
+.registration-form__btn  {
+  @extend %form-btn;
+  width: 200px;
+  margin: 40px auto 0;
+}
+
+.registration-form__input-error {
+  @extend %form-error;
+}

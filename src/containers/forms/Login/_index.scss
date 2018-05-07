@@ -1,4 +1,12 @@
-@import "authorized-block";
+.login-form {
+  @extend %form;
+  width: 300px;
+}
+
+.login-form__title {
+  @extend %form-title;
+  text-align: left;
+}
 
 .login-form__label {
   font-size: $font-size-smaller;
@@ -9,6 +17,12 @@
   @extend %input;
   @extend %input-color;
   width: 300px;
+}
+
+.login-form__btn  {
+  @extend %form-btn;
+  width: 200px;
+  margin: 40px auto 0;
 }
 
 .login-form__input-error {

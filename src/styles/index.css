@@ -9,23 +9,23 @@
   text-decoration: underline;
   color: #ffc410; }
 
-.login-form__input {
+.login-form__input, .registration-form__input {
   outline: none;
   background: #fdfdfd;
   transition: background 0.3s ease-in-out; }
-  .login-form__input .header__input::-webkit-input-placeholder {
+  .login-form__input .header__input::-webkit-input-placeholder, .registration-form__input .header__input::-webkit-input-placeholder {
     color: #9b9b9b;
     font-size: 14px; }
-  .login-form__input .header__input:-moz-placeholder {
+  .login-form__input .header__input:-moz-placeholder, .registration-form__input .header__input:-moz-placeholder {
     color: #9b9b9b;
     font-size: 14px; }
-  .login-form__input .header__input::-moz-placeholder {
+  .login-form__input .header__input::-moz-placeholder, .registration-form__input .header__input::-moz-placeholder {
     color: #9b9b9b;
     font-size: 14px; }
-  .login-form__input .header__input:-ms-input-placeholder {
+  .login-form__input .header__input:-ms-input-placeholder, .registration-form__input .header__input:-ms-input-placeholder {
     color: #9b9b9b;
     font-size: 14px; }
-  .login-form__input:focus {
+  .login-form__input:focus, .registration-form__input:focus {
     background: #ffffff; }
 
 .file-form__blackout {
@@ -33,11 +33,11 @@
   height: 100%;
   width: 100%; }
 
-.authorization-form__button {
+.login-form__btn, .registration-form__btn {
   border: 2px solid #ffc410;
   background-color: #ffc410;
   transition: all 0.3s ease-in-out; }
-  .authorization-form__button:hover {
+  .login-form__btn:hover, .registration-form__btn:hover {
     background: none;
     border-color: #0f264f; }
 
@@ -299,6 +299,12 @@ table {
         margin-left: 15px;
         text-decoration: none; }
 
+.react-datepicker-wrapper {
+  width: 100%; }
+
+.react-datepicker__input-container {
+  width: 100%; }
+
 .doc__list {
   box-sizing: border-box;
   padding: 20px 30px;
@@ -451,7 +457,7 @@ table {
   .form__dropdown-item_selected {
     background-color: #9b9b9b; }
 
-.authorization-form {
+.login-form, .registration-form {
   position: relative;
   max-height: calc(100% - 100px);
   overflow: auto;
@@ -468,7 +474,7 @@ table {
   .form-item__active {
     display: inline-block; }
 
-.login-form__input {
+.login-form__input, .registration-form__input {
   box-sizing: border-box;
   height: 47px;
   outline: none;
@@ -477,7 +483,7 @@ table {
   font-size: 14px;
   line-height: 27px; }
 
-.authorization-form__button {
+.login-form__btn, .registration-form__btn {
   display: block;
   box-sizing: border-box;
   text-align: center;
@@ -489,14 +495,14 @@ table {
   cursor: pointer;
   outline: none; }
 
-.authorization-form__title {
+.login-form__title, .registration-form__title {
   margin: 20px 0 10px;
   font-size: 24px;
   line-height: 34px;
   font-weight: 600;
   text-align: center; }
 
-.login-form__input-error {
+.login-form__input-error, .registration-form__input-error {
   position: absolute;
   top: 50px;
   color: #ff1400;
@@ -524,21 +530,11 @@ table {
   margin-top: 20px;
   font-size: 14px; }
 
-.authorization-block {
-  color: #0f264f;
-  display: flex;
-  align-items: center;
-  height: 100%; }
+.login-form {
+  width: 300px; }
 
-.authorization-form {
-  position: absolute;
-  top: calc(50% - 155px);
-  left: calc(50% - 185px);
-  margin: auto;
-  width: 300px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
-  .authorization-form__button {
-    width: 100%; }
+.login-form__title {
+  text-align: left; }
 
 .login-form__label {
   font-size: 14px;
@@ -546,3 +542,24 @@ table {
 
 .login-form__input {
   width: 300px; }
+
+.login-form__btn {
+  width: 200px;
+  margin: 40px auto 0; }
+
+.registration-form {
+  width: 300px; }
+
+.registration-form__title {
+  text-align: left; }
+
+.registration-form__label {
+  font-size: 14px;
+  margin: 21px 0 8px; }
+
+.registration-form__input {
+  width: 300px; }
+
+.registration-form__btn {
+  width: 200px;
+  margin: 40px auto 0; }

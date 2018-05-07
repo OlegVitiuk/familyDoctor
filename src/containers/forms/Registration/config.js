@@ -1,22 +1,46 @@
 import Input from '../../components/render/Input';
-import { email, required } from '../../../utils/formUtils';
+import DatePicker from '../../components/render/Date';
+import {email, required, phoneNumber} from '../../../utils/formUtils';
 
 const fields = [
+    {
+        name: 'Ім\'я',
+        component: Input,
+        type: 'text',
+        placeholder: 'lawyer@example.com',
+        validate: [required, email],
+    },
+    {
+        name: 'Прізвище',
+        component: Input,
+        type: 'text',
+        placeholder: 'lawyer@example.com',
+        validate: [required, email],
+    }, {
+        name: 'День народження',
+        component: DatePicker,
+        validate: [required],
+    },
     {
         name: 'email',
         component: Input,
         type: 'text',
         placeholder: 'lawyer@example.com',
         validate: [required, email],
-        className: '',
     },
     {
-        name: 'password',
+        name: 'Пароль',
         component: Input,
         type: 'password',
         placeholder: 'password',
         validate: [required],
-        className: '',
+    },
+    {
+        name: 'Телефон',
+        component: Input,
+        type: 'password',
+        placeholder: 'password',
+        validate: [required, phoneNumber],
     },
 ];
 
