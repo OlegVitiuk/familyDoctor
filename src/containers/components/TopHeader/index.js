@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import config from './config';
-import './topheader.scss';
+import './_topheader.scss';
 
 export default class TopHeader extends React.Component {
 

@@ -1,0 +1,18 @@
+@mixin placeholder($element) {
+
+  .#{$element}::-webkit-input-placeholder {
+    @content;
+  }
+
+  .#{$element}:-moz-placeholder {
+    @content;
+  }
+
+  .#{$element}::-moz-placeholder {
+    @content;
+  }
+
+  .#{$element}:-ms-input-placeholder {
+    @content;
+  }
+}

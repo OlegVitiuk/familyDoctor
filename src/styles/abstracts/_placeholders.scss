@@ -1,0 +1,154 @@
+%flex-content {
+  display: flex;
+  flex-direction: column;
+  display: -webkit-flex;
+}
+
+%circle {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  background: $element-bg-color;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+%vertical-centering {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%link {
+  text-decoration: none;
+  color: $text-color;
+  cursor: pointer;
+}
+
+%link-color-1 {
+
+  &:hover {
+    text-decoration: underline;
+    color: $element-color;
+  }
+}
+
+%input-color {
+  @include placeholder(header__input) {
+    color: $nonactive-text-color;
+    font-size: $font-size-smaller;
+  }
+  outline: none;
+  background: $nonactive-input-bg-color;
+  transition: background 0.3s ease-in-out;
+
+  &:focus {
+    background: $extra-color;
+  }
+}
+
+%error {
+  color: $error-color;
+  font-size: $font-size-error-text;
+}
+
+%content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+%menu-item-color {
+  background: $extra-color;
+
+  &:hover {
+    background: $element-color;
+  }
+}
+
+%button-color-1 {
+  color: $text-color;
+  background: $element-color;
+  border: 1px solid $element-color;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: $hover-element-color;
+    border-color: $hover-element-color;
+  }
+}
+
+%button-color-2 {
+  color: $extra-color;
+  background: $add-btn-bg-color;
+  border: 1px solid $add-btn-bg-color;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: $add-btn-bg-color-hover;
+    border-color: $add-btn-bg-color-hover;
+  }
+}
+
+%button-color-3 {
+  border: 2px solid $element-color;
+  background-color: $element-color;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: none;
+    border-color: $main-border-color;
+  }
+}
+
+%button-color-4 {
+  background-color: #eff3f6;
+  box-shadow: 0 2px 5px 0 #d9dfea;
+
+  &:hover {
+    background-color: #d9dfea;
+    box-shadow: 0 2px 5px 0 #d9dfea;
+  }
+}
+
+%center-block {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+%widget-title {
+  font-size: $font-size-large;
+  color: $text-color;
+  margin: 10px 20px;
+  font-weight: $font-weight-medium;
+}
+
+%table-button,
+%table-button-2{
+  display: inline-block;
+  width: 70px;
+  height: 28px;
+  cursor: pointer;
+  line-height: 28px;
+  border-radius: $border-radius;
+  text-align: center;
+  font-size: $font-size-smaller;
+  overflow: hidden;
+}
+
+%table-button{
+  @extend %button-color-2;
+}
+
+%table-button-2{
+  @extend %button-color-3;
+}
+
+%overlay {
+  @extend %content;
+  position: absolute;
+  z-index: $z-index-overlay;
+  background-color: rgba(238, 241, 247, 0.8);
+}

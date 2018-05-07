@@ -1,4 +1,10 @@
-@import "reset.scss";
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import "abstracts/_variables";
+@import "abstracts/_mixins";
+@import "abstracts/_placeholders";
+@import "base/_base";
+@import "fonts";
+@import "base/_icons";
+@import "base/_reset";
+
 @import "../containers/index";
-@import "base.scss";

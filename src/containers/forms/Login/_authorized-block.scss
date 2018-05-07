@@ -1,0 +1,26 @@
+.authorization-block {
+  color: $main-border-color;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.authorization-form {
+  @extend %form;
+  position: absolute;
+  top: calc(50% - 155px);
+  left: calc(50% - 185px);
+  margin: auto;
+  width: 300px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+  &__title {
+    @extend %form-title;
+  }
+
+  &__button {
+    @extend %form-btn;
+    width: 100%;
+  }
+}
+

@@ -1,0 +1,584 @@
+$font-Flaticon-refresh-button: "\f100";
+$font-Flaticon-balance: "\f101";
+$font-Flaticon-jpeg: "\f102";
+$font-Flaticon-square: "\f103";
+$font-Flaticon-interface-4: "\f104";
+$font-Flaticon-bmp-file-format-symbol: "\f105";
+$font-Flaticon-tiff-file-extension-symbol: "\f106";
+$font-Flaticon-interface-3: "\f107";
+$font-Flaticon-png-file-format-symbol: "\f108";
+$font-Flaticon-docx-file-format-symbol: "\f109";
+$font-Flaticon-jpg-file-format-variant: "\f10a";
+$font-Flaticon-pdf-file-format-symbol: "\f10b";
+$font-Flaticon-doc-file-format: "\f10c";
+$font-Flaticon-xls-file-format-symbol: "\f10d";
+$font-Flaticon-check-1: "\f10e";
+$font-Flaticon-menu-symbol-of-three-parallel-lines: "\f10f";
+$font-Flaticon-briefcase: "\f110";
+$font-Flaticon-multimedia: "\f111";
+$font-Flaticon-down-arrow: "\f112";
+$font-Flaticon-left-arrow-1: "\f113";
+$font-Flaticon-right-arrow-1: "\f114";
+$font-Flaticon-star-1: "\f115";
+$font-Flaticon-tag: "\f116";
+$font-Flaticon-download: "\f117";
+$font-Flaticon-envelope: "\f118";
+$font-Flaticon-info: "\f119";
+$font-Flaticon-left-arrow: "\f11a";
+$font-Flaticon-right-arrow: "\f11b";
+$font-Flaticon-download-arrow: "\f11c";
+$font-Flaticon-open-trash-can: "\f11d";
+$font-Flaticon-recycling-bin: "\f11e";
+$font-Flaticon-down-filled-triangular-arrow: "\f11f";
+$font-Flaticon-clock: "\f120";
+$font-Flaticon-office-briefcase: "\f121";
+$font-Flaticon-magnifying-glass-browser: "\f122";
+$font-Flaticon-four-squares-list: "\f123";
+$font-Flaticon-blank-file: "\f124";
+$font-Flaticon-notification: "\f125";
+$font-Flaticon-up-arrow: "\f126";
+$font-Flaticon-chat: "\f127";
+$font-Flaticon-agenda: "\f128";
+$font-Flaticon-add: "\f129";
+$font-Flaticon-multiply: "\f12a";
+$font-Flaticon-delete: "\f12b";
+$font-Flaticon-days: "\f12c";
+$font-Flaticon-box: "\f12d";
+$font-Flaticon-more: "\f12e";
+$font-Flaticon-interface-2: "\f12f";
+$font-Flaticon-interface: "\f130";
+$font-Flaticon-symbol: "\f131";
+$font-Flaticon-check: "\f132";
+$font-Flaticon-folder-1: "\f133";
+$font-Flaticon-graphic: "\f134";
+$font-Flaticon-logout: "\f135";
+$font-Flaticon-folder: "\f136";
+$font-Flaticon-users: "\f137";
+$font-Flaticon-file-1: "\f138";
+$font-Flaticon-user: "\f139";
+$font-Flaticon-star: "\f13a";
+$font-Flaticon-push-pin: "\f13b";
+$font-Flaticon-paper-1: "\f13c";
+$font-Flaticon-paper: "\f13d";
+$font-Flaticon-exchange: "\f13e";
+$font-Flaticon-technology: "\f13f";
+
+%icon-params {
+  display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: $font-weight-normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+%icon-arrow-logout {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-logout;
+  }
+}
+
+%icon-arrow-right {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-right-arrow-1;
+  }
+}
+
+%icon-refresh {
+  font-size: 20px;
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-refresh-button;
+  }
+}
+
+%icon-arrow-left {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-left-arrow-1;
+  }
+}
+
+%icon-xlsx-extension {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-interface-3;
+  }
+}
+
+%icon-docx-extension {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-docx-file-format-symbol;
+  }
+}
+
+%icon-png-extension {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-png-file-format-symbol;
+  }
+}
+
+%icon-jpg-extension {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-jpg-file-format-variant;
+  }
+}
+
+%icon-pdf-extension {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-pdf-file-format-symbol;
+  }
+}
+
+%icon-doc-extension {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-doc-file-format;
+  }
+}
+
+%icon-xls-extension {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-xls-file-format-symbol;
+  }
+}
+
+%icon-bmp-extension {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-bmp-file-format-symbol;
+  }
+}
+
+%icon-tiff-extension {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-tiff-file-extension-symbol;
+  }
+}
+
+%icon-unknown-extension {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-square;
+  }
+}
+
+%icon-jpeg-extension {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-jpeg;
+  }
+}
+
+%icon-gif-extension {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-interface-4;
+  }
+}
+
+%icon-arrow-next {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-right-arrow;
+  }
+}
+
+%icon-arrow-prew {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-left-arrow;
+  }
+}
+
+%icon-check {
+
+  &:after {
+    @extend %icon-params;
+    content: $font-Flaticon-check;
+  }
+}
+
+%icon-checkBold {
+
+  &:after {
+    @extend %icon-params;
+    content: $font-Flaticon-check-1;
+  }
+}
+
+%icon-menu {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-menu-symbol-of-three-parallel-lines;
+  }
+}
+
+%icon-interface-2 {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-interface-2;
+  }
+}
+
+%icon-recycling-bin {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-recycling-bin;
+  }
+}
+
+%icon-days {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-days;
+  }
+}
+
+%icon-folder-1 {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-folder-1;
+  }
+}
+
+%icon-box {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-box;
+  }
+}
+
+%icon-interface {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-interface;
+  }
+}
+
+%icon-open-trash-can {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-open-trash-can;
+  }
+}
+
+%icon-four-squares-list {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-four-squares-list;
+  }
+}
+
+%icon-multimedia {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-multimedia;
+  }
+}
+
+%icon-users {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-users;
+  }
+}
+
+%icon-user {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-user;
+  }
+}
+
+%icon-file {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-file-1;
+  }
+}
+
+%icon-briefcase {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-briefcase;
+  }
+}
+
+%icon-magnifying-glass {
+
+  &:after {
+    @extend %icon-params;
+    content: $font-Flaticon-magnifying-glass-browser;
+  }
+}
+
+%icon-filled-triangle {
+
+  &:after {
+    @extend %icon-params;
+    content: $font-Flaticon-down-filled-triangular-arrow;
+  }
+}
+
+%icon-exchange {
+
+  &:after {
+    @extend %icon-params;
+    content: $font-Flaticon-exchange;
+  }
+}
+
+%icon-add {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-add;
+  }
+}
+
+%icon-star-1 {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-star;
+  }
+}
+
+%icon-push-pin {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-push-pin;
+  }
+}
+
+%icon-more {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-more;
+  }
+}
+
+%icon-envelope {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-envelope;
+  }
+}
+
+%icon-folder {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-folder;
+  }
+}
+
+%icon-clock {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-clock;
+  }
+}
+
+%icon-office-briefcase {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-office-briefcase;
+  }
+}
+
+%icon-sheet {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-paper-1;
+  }
+}
+
+%icon-paper {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-paper;
+  }
+}
+
+%icon-blank-file {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-blank-file;
+  }
+}
+
+%icon-down-arrow {
+
+  &:after {
+    @extend %icon-params;
+    content: $font-Flaticon-down-arrow;
+  }
+}
+
+%icon-graphic {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-graphic;
+  }
+}
+
+%icon-agenda {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-agenda;
+  }
+}
+
+%icon-multiply {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-multiply;
+  }
+}
+
+%icon-info {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-info;
+  }
+}
+
+%icon-chat {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-chat;
+  }
+}
+
+%icon-notification {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-notification;
+  }
+}
+
+%icon-download {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-download;
+  }
+}
+
+%icon-star {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-star-1;
+  }
+}
+
+.star-empty {
+  @extend %icon-star;
+}
+
+.star-full {
+  @extend %icon-star-1;
+  color: $element-color;
+}
+
+%icon-arrow-up {
+
+  &:after {
+    @extend %icon-params;
+    content: $font-Flaticon-up-arrow;
+  }
+}
+
+%icon-arrow-down {
+
+  &:after {
+    @extend %icon-params;
+    content: $font-Flaticon-download-arrow;
+  }
+}
+
+%icon-tag {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-tag;
+  }
+}
+
+%icon-floppy {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-technology;
+  }
+}
+
+%icon-balance {
+
+  &:before {
+    @extend %icon-params;
+    content: $font-Flaticon-balance;
+  }
+}

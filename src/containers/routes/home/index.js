@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {getUsers} from '../../../actions/userActions';
 import { Link } from 'react-router-dom';
-import './index.scss';
+import './_index.scss';
 import config from './config';
 
 class Home extends React.Component {
