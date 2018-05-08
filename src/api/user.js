@@ -1,5 +1,4 @@
-import {apiPrefix} from "../etc/config";
-import axios from "axios/index";
+import {api} from 'api/index';
 
 export const registerNewUser = user =>
-    axios.post(`${apiPrefix}/users`, user);
+    api.post('/users', user);

@@ -9,10 +9,6 @@ export default class TopHeader extends React.Component {
         history: PropTypes.object
     };
 
-    componentWillMount() {
-        console.log(history);
-    }
-
     render() {
         return (
             <div className='topheader'>
