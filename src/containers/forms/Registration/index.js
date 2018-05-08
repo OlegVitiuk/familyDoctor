@@ -2,15 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Field, propTypes, reduxForm} from 'redux-form';
 import fields from './config';
+import {registerNewUser} from 'api/user';
 
-class Login extends React.Component {
+class Registration extends React.Component {
     static propTypes = {
         ...propTypes,
         history: PropTypes.object,
     };
 
-    onSubmit = (values, dispatch) => {
-
+    onSubmit = values => {
+        registerNewUser(values);
     }
 
     renderField = (field, i) => <Field {...field} key={i}/>;
@@ -41,4 +42,4 @@ export default (reduxForm({
     form: 'registration',
     destroyOnUnmount: false,
     forceUnregisterOnUnmount: true,
-})(Login));
+})(Registration));

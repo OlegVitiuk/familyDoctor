@@ -23,7 +23,7 @@ class Input extends React.Component {
 
   render() {
     const {
-      input, meta, addTag, type, className, label
+      input, meta, addTag, type, className,label
     } = this.props;
 
     return (
@@ -32,7 +32,7 @@ class Input extends React.Component {
             ? `${className}_label`
             : `${meta.form}-form__label`}`}>
           {/*<FormattedMessage id={label || `forms.${className || meta.form}_${input.name}`} />*/}
-            {input.name}
+            {label}
         </div>
         <div className="form__wrapper">
             <input {...input}

@@ -4,24 +4,28 @@ import {email, required, phoneNumber} from '../../../utils/formUtils';
 
 const fields = [
     {
-        name: 'Ім\'я',
+        name: 'name',
+        label: 'Ім\'я',
         component: Input,
         type: 'text',
         placeholder: 'lawyer@example.com',
-        validate: [required, email],
+        validate: [required],
     },
     {
-        name: 'Прізвище',
+        name: 'surname',
+        label: 'Прізвище',
         component: Input,
         type: 'text',
         placeholder: 'lawyer@example.com',
-        validate: [required, email],
+        validate: [required],
     }, {
-        name: 'День народження',
+        name: 'birthday',
+        label: 'День народження',
         component: DatePicker,
         validate: [required],
     },
     {
+        label: 'email',
         name: 'email',
         component: Input,
         type: 'text',
@@ -29,14 +33,16 @@ const fields = [
         validate: [required, email],
     },
     {
-        name: 'Пароль',
+        name: 'password',
+        label: 'Пароль',
         component: Input,
         type: 'password',
         placeholder: 'password',
         validate: [required],
     },
     {
-        name: 'Телефон',
+        name: 'telephone',
+        label: 'Телефон',
         component: Input,
         type: 'password',
         placeholder: 'password',
