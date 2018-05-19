@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Field, propTypes, reduxForm, SubmissionError } from 'redux-form';
 import fields from './config';
-import {getUser} from "actions/user";
+import {loginUser} from "api/user";
 
 class Login extends React.Component {
     static propTypes = {
         closeForm: PropTypes.func,
     };
 
-    onSubmit = (values, dispatch) => {
-        dispatch(getUser(values));
+    onSubmit = values => {
+        loginUser(values);
     }
 
     renderField = (field, i) => <Field {...field} key={i} />;

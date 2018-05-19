@@ -14,16 +14,17 @@ export default class TopHeader extends React.Component {
             <div className='topheader'>
                 <div className='topheader__info'>
                     <div className="topheader__info-call">
-                        <img className='topheader__info-logo'
-                             src="https://ucarecdn.com/56ec26cb-df1b-4f55-8acc-827510b0ed81/1jojl1FOMkX9WypfBe43D6kivaHrx9NnxbJwXs1M3EMoAJtlSItgfBr9Psy.png"
-                             alt="logo"/>
+                        <a href="/">
+                            <img className='topheader__info-logo'
+                                 src="https://ucarecdn.com/de59fd3c-e683-4cd2-a211-f0183d145671/download.png"
+                                 alt="logo"/>
+                        </a>
                         <div className="topheader__info-call-item topheader__info-call-form">Обратный звонок</div>
                         <span className="topheader__info-call-item">0956289359</span>
                         <div className="topheader__info-call-item topheader__info-call-form">Небесплатно</div>
                     </div>
                     <div className='topheader__info-search'>
                         <div className="topheader__info-call-item topheader__info-call-form">Киев</div>
-                        <div className="topheader__info-call-item topheader__info-call-form">Поиск</div>
                     </div>
                 </div>
                 <div className='topheader__menu'>

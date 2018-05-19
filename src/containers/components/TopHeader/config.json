@@ -10,7 +10,7 @@
       "route": "diagnostics"
     },
     {"name": "Лаборатории",
-      "route": "laboratory"
+      "route": "laboratories"
     }
   ],
   "posibilities": [

@@ -1,8 +1,12 @@
 .doc__list{
+  display: flex;
+  justify-content: center;
+}
+
+.doctors{
   box-sizing: border-box;
   padding: 20px 30px;
   background-color: #ececec;
-  width: 66.5%;
   height: 100%;
   min-height: 756px;
   position: relative;
