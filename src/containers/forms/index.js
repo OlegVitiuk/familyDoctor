@@ -9,9 +9,13 @@ export default class FormsContainer extends React.Component{
         super(props);
 
         this.forms ={
-            login: <Login history={history}/>,
-            registration: <Registration history={history}/>
+            login: <Login closeForm={this.closeForm}/>,
+            registration: <Registration closeForm={this.closeForm}/>
         }
+    }
+
+    closeForm = () =>{
+        history.push(`${history.location.pathname}`);
     }
 
     render(){

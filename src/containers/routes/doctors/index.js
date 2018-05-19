@@ -2,7 +2,6 @@ import React from 'react';
 import Doctor from '../../components/Doctor/index';
 
 export default class Doctors extends React.Component {
-
     render() {
         return (
             <div className='doc__list'>

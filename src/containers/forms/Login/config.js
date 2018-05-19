@@ -4,6 +4,7 @@ import { email, required } from '../../../utils/formUtils';
 const fields = [
     {
         name: 'email',
+        label: 'Пошта',
         component: Input,
         type: 'text',
         placeholder: 'lawyer@example.com',
@@ -12,6 +13,7 @@ const fields = [
     },
     {
         name: 'password',
+        label: 'Пароль',
         component: Input,
         type: 'password',
         placeholder: 'password',

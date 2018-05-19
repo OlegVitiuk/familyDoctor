@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {getUsers} from '../../../actions/userActions';
+//import {getUsers} from 'actions/userActions';
 import { Link } from 'react-router-dom';
 import './_index.scss';
 import config from './config';
@@ -13,7 +13,7 @@ class Home extends React.Component {
     };
 
     componentWillMount(){
-        this.props.dispatch(getUsers());
+        //this.props.dispatch(getUsers());
     }
 
     render() {

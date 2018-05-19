@@ -7,11 +7,12 @@ import {registerNewUser} from 'api/user';
 class Registration extends React.Component {
     static propTypes = {
         ...propTypes,
-        history: PropTypes.object,
+        closeForm: PropTypes.func,
     };
 
     onSubmit = values => {
-        registerNewUser(values);
+        registerNewUser(values).catch(res => console.log(res));
+        this.props.closeForm();
     }
 
     renderField = (field, i) => <Field {...field} key={i}/>;
@@ -25,7 +26,7 @@ class Registration extends React.Component {
                 <div className="registration-form__title">
                     Реєстрація
                 </div>
-                <div className="form__close" onClick={() => history.push(`${history.location.pathname}`)}/>
+                <div className="form__close" onClick={() => this.props.closeForm()}/>
                 {fields.map(this.renderField)}
                 {this.props.error && (
                     <div className="registration-form__error">Поле обов'язкове</div>
@@ -39,7 +40,5 @@ class Registration extends React.Component {
 }
 
 export default (reduxForm({
-    form: 'registration',
-    destroyOnUnmount: false,
-    forceUnregisterOnUnmount: true,
+    form: 'registration'
 })(Registration));

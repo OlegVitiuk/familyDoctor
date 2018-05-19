@@ -1,18 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-//import { connect } from 'react-redux';
 import { Field, propTypes, reduxForm, SubmissionError } from 'redux-form';
-// import { FormattedMessage } from 'react-intl';
-// import { handleLogin } from 'actions/user';
 import fields from './config';
+import {getUser} from "actions/user";
 
 class Login extends React.Component {
     static propTypes = {
-        history: PropTypes.object,
+        closeForm: PropTypes.func,
     };
 
     onSubmit = (values, dispatch) => {
-        console.log(values);
+        dispatch(getUser(values));
     }
 
     renderField = (field, i) => <Field {...field} key={i} />;
@@ -27,7 +25,7 @@ class Login extends React.Component {
                     <div className="login-form__title">
                          Вхід
                     </div>
-                    <div className="form__close" onClick={()=>history.push(`${history.location.pathname}`)} />
+                    <div className="form__close" onClick={()=>this.props.closeForm()} />
                     {fields.map(this.renderField)}
                     {this.props.error && (
                         <div className="login-form__error">Поле обов'язкове</div>
