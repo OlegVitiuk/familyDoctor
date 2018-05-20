@@ -1,10 +1,13 @@
 import axios from 'axios';
 
-const localApi = "http://localhost:8080";
-const remoteApi = "https://evening-shelf-73105.herokuapp.com";
+let apiUrl = "http://localhost:8080";
+
+if (process.env.NODE_ENV === 'production') {
+    apiUrl = "https://evening-shelf-73105.herokuapp.com";
+}
 
 export const api = axios.create({
-    baseURL: localApi,
+    baseURL: apiUrl,
     headers: {
         'Content-Type': 'application/json',
     },
