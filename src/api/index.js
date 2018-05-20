@@ -1,9 +1,13 @@
 import axios from 'axios';
 
-const localApi = 'localhost:8080';
+let apiUrl = 'localhost:8080';
+
+if(process.env.REACT_APP_ENV === 'production'){
+    apiUrl  = 'https://enigmatic-journey-33069.herokuapp.com';
+}
 
 export const api = axios.create({
-    baseURL: process.env.REACT_APP_API_URL || localApi,
+    baseURL: apiUrl,
     headers: {
         'Content-Type': 'application/json',
     },
