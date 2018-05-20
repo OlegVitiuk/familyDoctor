@@ -29,7 +29,7 @@
     "validator": "^10.1.0"
   },
   "scripts": {
-    "set:env": "node ./setEnv.js > .env",
+    "set:env": "node ./src/setEnv.js > ../.env",
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
