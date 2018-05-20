@@ -48,7 +48,7 @@
 
 body {
   box-sizing: border-box;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'ProximeNova', sans-serif;
   min-width: 1300px; }
 
 .file-form__blackout {
@@ -57,6 +57,12 @@ body {
 @font-face {
   font-family: "Flaticon";
   src: url("../fonts/Flaticon.woff") format("embedded-opentype"), url("../fonts/Flaticon.woff") format("woff"), url("../fonts/Flaticon.ttf") format("truetype"), url("../fonts/Flaticon.svg#Flaticon") format("svg");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: "ProximeNova";
+  src: url("../fonts/ProximaNova-Light.woff") format("embedded-opentype"), url("../fonts/ProximaNova-Light.woff") format("woff"), url("../fonts/ProximaNova-Light.ttf") format("truetype");
   font-weight: 500;
   font-style: normal; }
 
@@ -190,10 +196,10 @@ table {
   background-color: #ffffff;
   border-radius: 4px;
   padding: 30px 0 0;
-  margin-bottom: 15px;
   border: 1px solid #e0e0e0;
   flex-direction: column;
-  width: 66.5%; }
+  width: 66.5%;
+  margin: 10px 0; }
   .doc__header {
     display: flex;
     border-bottom: 1px solid #e0e0e0;
@@ -309,7 +315,8 @@ table {
 
 .doc__list {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  flex-direction: column; }
 
 .doctors {
   box-sizing: border-box;

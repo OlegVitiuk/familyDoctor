@@ -8,3 +8,11 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "ProximeNova";
+  src: url("../fonts/ProximaNova-Light.woff") format("embedded-opentype"),
+  url("../fonts/ProximaNova-Light.woff") format("woff"),
+  url("../fonts/ProximaNova-Light.ttf") format("truetype");
+  font-weight: $font-weight-normal;
+  font-style: normal;
+}
