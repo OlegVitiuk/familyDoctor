@@ -2,8 +2,10 @@ import axios from 'axios';
 
 let apiUrl = "http://localhost:8080";
 
+console.log(process.env.NODE_ENV);
 if (process.env.NODE_ENV === 'production') {
-    apiUrl = "https://evening-shelf-73105.herokuapp.com";
+    console.log("set new Api");
+    apiUrl = "https://enigmatic-journey-33069.herokuapp.com";
 }
 
 export const api = axios.create({

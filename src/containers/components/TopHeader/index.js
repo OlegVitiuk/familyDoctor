@@ -2,12 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import config from './config';
-import {history} from '../../../stores/store';
+import {history} from 'stores/store';
+import {connect} from 'react-redux';
+import {getAllClinics} from "actions/clinics";
 
-export default class TopHeader extends React.Component {
+class TopHeader extends React.Component {
     static propTypes = {
-        history: PropTypes.object
+        history: PropTypes.object,
+        clinics: PropTypes.arrayOf(PropTypes.object)
     };
+
+    static defaultProps = {
+        clinics: []
+    };
+
+    componentDidMount(){
+        this.props.dispatch(getAllClinics());
+    }
 
     render() {
         return (
@@ -45,3 +56,7 @@ export default class TopHeader extends React.Component {
         );
     }
 }
+
+export default connect(state => ({
+    clinics: state.clinics
+}))(TopHeader)

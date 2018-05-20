@@ -31,7 +31,7 @@ export default class Doctor extends React.Component {
                         </div>
                     </div>
                     <div className="doc__info-price">
-                        <h3 className="doc__info-price-text"> 550 грн</h3>
+                        <h3 className="doc__info-price-text">{item.price}</h3>
                         <a href="#" className="doc__info-price-button">Записаться</a>
                     </div>
                 </div>
