@@ -7,8 +7,6 @@
     "axios": "^0.18.0",
     "babel-preset-es2015": "^6.24.1",
     "body-parser": "^1.18.2",
-    "cross-env": "^5.1.5",
-    "env-cmd": "^8.0.2",
     "express": "^4.16.3",
     "history": "^4.7.2",
     "moment": "^2.22.1",
@@ -29,14 +27,13 @@
     "validator": "^10.1.0"
   },
   "scripts": {
-    "set:env": "node ./src/setEnv.js > ../.env",
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
-    "start": "cross-env NODE_ENV=production npm run set:env && npm-run-all -p watch-css start-js",
-    "start:dev": "cross-env NODE_ENV=development npm run set:env && npm-run-all -p watch-css start-js",
+    "start": "npm-run-all -p watch-css start-js",
+    "start:dev": "npm-run-all -p watch-css start-js",
     "build-js": "react-scripts build",
-    "build": "cross-env NODE_ENV=production npm run set:env && npm-run-all build-css build-js",
+    "build": "set REACT_APP_API_URL= 'https://enigmatic-journey-33069.herokuapp.com' && npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
