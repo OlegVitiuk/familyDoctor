@@ -27,7 +27,7 @@ class Doctors extends React.Component {
                 <div className='doc__list'>
                     {
                         this.props.doctors.map(doctor => (
-                            <Doctor key={doctor["_id"] }item={doctor}/>
+                            <Doctor key={doctor["_id"] } item={doctor}/>
                         ))
                     }
                 </div>

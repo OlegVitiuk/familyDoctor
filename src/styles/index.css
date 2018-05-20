@@ -48,8 +48,9 @@
 
 body {
   box-sizing: border-box;
-  font-family: 'ProximeNova', sans-serif;
-  min-width: 1300px; }
+  font-family: 'ProximaNova', sans-serif;
+  min-width: 1300px;
+  overflow-y: auto; }
 
 .file-form__blackout {
   overflow: auto; }
@@ -61,7 +62,7 @@ body {
   font-style: normal; }
 
 @font-face {
-  font-family: "ProximeNova";
+  font-family: "ProximaNova";
   src: url("../fonts/ProximaNova-Light.woff") format("embedded-opentype"), url("../fonts/ProximaNova-Light.woff") format("woff"), url("../fonts/ProximaNova-Light.ttf") format("truetype");
   font-weight: 500;
   font-style: normal; }
@@ -207,7 +208,8 @@ table {
     .doc__header-img {
       margin-right: 30px;
       text-align: center;
-      width: 100px;
+      width: 150px;
+      height: 150px;
       position: relative; }
     .doc__header-content {
       display: flex;
@@ -323,7 +325,6 @@ table {
   padding: 20px 30px;
   background-color: #ececec;
   height: 100%;
-  min-height: 756px;
   position: relative;
   padding-bottom: 90px;
   z-index: 0; }
@@ -337,7 +338,6 @@ table {
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
-  min-height: 500px;
   padding-top: 54px; }
 
 .home__search {

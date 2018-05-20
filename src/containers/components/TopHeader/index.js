@@ -19,12 +19,8 @@ export default class TopHeader extends React.Component {
                                  src="https://ucarecdn.com/de59fd3c-e683-4cd2-a211-f0183d145671/download.png"
                                  alt="logo"/>
                         </a>
-                        <div className="topheader__info-call-item topheader__info-call-form">Обратный звонок</div>
+                        <div className='topheader__info-place'>Киев</div>
                         <span className="topheader__info-call-item">0956289359</span>
-                        <div className="topheader__info-call-item topheader__info-call-form">Небесплатно</div>
-                    </div>
-                    <div className='topheader__info-search'>
-                        <div className="topheader__info-call-item topheader__info-call-form">Киев</div>
                     </div>
                 </div>
                 <div className='topheader__menu'>
