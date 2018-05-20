@@ -29,12 +29,12 @@
     "validator": "^10.1.0"
   },
   "scripts": {
-    "set:env": "node setenv.js > .env",
+    "set:env": "node ./app/setenv.js > .env",
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
-    "start": "cross-env NODE_ENV=development npm run set:env && npm-run-all -p watch-css start-js",
-    "start:prod": "cross-env NODE_ENV=production npm run set:env && npm-run-all -p watch-css start-js",
+    "start": "cross-env NODE_ENV=production npm run set:env && npm-run-all -p watch-css start-js",
+    "start:dev": "cross-env NODE_ENV=development npm run set:env && npm-run-all -p watch-css start-js",
     "build-js": "react-scripts build",
     "build": "cross-env NODE_ENV=production npm run set:env && npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
