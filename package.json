@@ -33,7 +33,7 @@
     "start": "npm-run-all -p watch-css start-js",
     "start:dev": "npm-run-all -p watch-css start-js",
     "build-js": "react-scripts build",
-    "build": "set REACT_APP_API_URL= 'https://enigmatic-journey-33069.herokuapp.com' && npm-run-all build-css build-js",
+    "build": "set REACT_APP_API_URL=https://enigmatic-journey-33069.herokuapp.com && npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
