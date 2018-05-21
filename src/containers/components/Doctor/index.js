@@ -24,14 +24,12 @@ export default class Doctor extends React.Component {
                         <span className="doc__info-clinic-name">Клиника Академика Земского</span>
                         <span className="doc__info-clinic-type">проспект Голосеевский, 59б</span>
                         <div className="doc__info-clinic-location">
-                            <span className="doc__info-clinic-location-text">Голосеевский район:</span>
-                            <span className="doc__info-clinic-location-link">Демеевка</span>
                             <span className="doc__info-clinic-location-metroText">Метро:</span>
                             <span className="doc__info-clinic-location-metroLink">Демеевская,Голосеевская</span>
                         </div>
                     </div>
                     <div className="doc__info-price">
-                        <h3 className="doc__info-price-text">{item.price}</h3>
+                        <h3 className="doc__info-price-text">{`${item.price} грн`}</h3>
                         <a href="#" className="doc__info-price-button">Записаться</a>
                     </div>
                 </div>

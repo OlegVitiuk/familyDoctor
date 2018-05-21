@@ -1,6 +1,5 @@
 body{
   box-sizing: border-box;
-  font-family: 'ProximaNova', sans-serif;
   min-width: 1300px;
   overflow-y: auto;
 }
@@ -8,5 +7,9 @@ body{
 .file-form__blackout {
   @extend %overlay;
   overflow: auto;
+}
+
+span, h1, h2,h3,h4,a{
+  font-family: 'ProximaNova', sans-serif !important;
 }
 

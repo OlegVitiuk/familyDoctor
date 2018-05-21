@@ -33,11 +33,11 @@
   height: 100%;
   width: 100%; }
 
-.login-form__btn, .registration-form__btn {
+.doc__info-price-button, .login-form__btn, .registration-form__btn {
   border: 2px solid #ffc410;
   background-color: #ffc410;
   transition: all 0.3s ease-in-out; }
-  .login-form__btn:hover, .registration-form__btn:hover {
+  .doc__info-price-button:hover, .login-form__btn:hover, .registration-form__btn:hover {
     background: none;
     border-color: #0f264f; }
 
@@ -48,12 +48,14 @@
 
 body {
   box-sizing: border-box;
-  font-family: 'ProximaNova', sans-serif;
   min-width: 1300px;
   overflow-y: auto; }
 
 .file-form__blackout {
   overflow: auto; }
+
+span, h1, h2, h3, h4, a {
+  font-family: 'ProximaNova', sans-serif !important; }
 
 @font-face {
   font-family: "Flaticon";
@@ -238,14 +240,15 @@ table {
     position: relative;
     border-bottom: 1px solid #e0e0e0;
     padding: 15px;
-    padding-right: 150px;
+    padding-right: 50px;
     padding-left: 30px;
     width: 100%;
     box-sizing: border-box;
     float: left;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
-    transition: all 0.2s; }
+    transition: all 0.2s;
+    justify-content: space-between; }
     .doc__info-clinic {
       display: flex;
       flex-direction: column; }
@@ -280,34 +283,22 @@ table {
         font-weight: 600;
         color: #212121; }
     .doc__info-price {
-      display: flex; }
+      display: flex;
+      align-items: center; }
       .doc__info-price-text {
         font-size: 20px;
-        line-height: 24px;
         font-weight: bold;
         color: #212121;
-        text-align: right;
-        top: 0;
-        display: inline-block;
-        right: 0;
-        position: relative; }
+        margin-right: 15px; }
       .doc__info-price-button {
-        padding: 0 20px;
-        color: #fff;
-        background-color: #82C933;
         transition: all 0.2s;
         cursor: pointer;
-        display: inline-block;
         font-size: 16px;
-        line-height: 40px;
         font-weight: 400;
-        height: 40px;
-        /* color: #ffffff; */
-        border-radius: 3px;
-        position: relative;
-        /* bottom: 10px; */
-        margin-left: 15px;
-        text-decoration: none; }
+        text-decoration: none;
+        color: #212121;
+        font-family: ProximaNova;
+        width: 200px; }
 
 .react-datepicker-wrapper {
   width: 100%; }
@@ -495,7 +486,7 @@ table {
   font-size: 14px;
   line-height: 27px; }
 
-.login-form__btn, .registration-form__btn {
+.doc__info-price-button, .login-form__btn, .registration-form__btn {
   display: block;
   box-sizing: border-box;
   text-align: center;
