@@ -27,7 +27,7 @@ class Doctors extends React.Component {
                 <div className='doc__list'>
                     {
                         this.props.doctors.map(doctor => (
-                            <Doctor key={doctor["_id"] } item={doctor}/>
+                            <Doctor key={doctor["_id"] } item={doctor} clinics={this.props.clinics}/>
                         ))
                     }
                 </div>
@@ -37,5 +37,6 @@ class Doctors extends React.Component {
 }
 
 export default connect(state => ({
-    doctors: state.doctors
+    doctors: state.doctors,
+    clinics: state.clinics
 }))(Doctors)
