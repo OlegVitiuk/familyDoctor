@@ -1,5 +1,5 @@
-import Input from '../../components/render/Input';
-import { email, required } from '../../../utils/formUtils';
+import Input from 'containers/components/render/Input';
+import { email, required } from 'utils/formUtils';
 
 const fields = [
     {

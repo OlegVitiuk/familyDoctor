@@ -5,22 +5,39 @@ import config from './config';
 import {history} from 'stores/store';
 import {connect} from 'react-redux';
 import {getAllClinics} from "actions/clinics";
+import {setAuthorizationToken} from "utils/index";
+import {SET_CURRENT_USER} from "constants/index";
 
 class TopHeader extends React.Component {
     static propTypes = {
         history: PropTypes.object,
-        clinics: PropTypes.arrayOf(PropTypes.object)
+        clinics: PropTypes.arrayOf(PropTypes.object),
+        auth: PropTypes.object
     };
 
     static defaultProps = {
         clinics: []
     };
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.dispatch(getAllClinics());
     }
 
+    topHeaderClick(item) {
+        const {auth, dispatch} = this.props;
+
+        if (!auth.isAuthenticated) {
+            history.push(`${history.location.pathname}#${item.route}`)
+        } else {
+            localStorage.removeItem('jwtToken');
+            setAuthorizationToken(false);
+            dispatch({type: SET_CURRENT_USER}, {});
+        }
+
+    }
+
     render() {
+        const {auth} = this.props;
         return (
             <div className='topheader'>
                 <div className='topheader__info'>
@@ -44,8 +61,14 @@ class TopHeader extends React.Component {
                     </ul>
                     <ul className="topheader__menu-posibilities">
                         {
-                            config.posibilities.map((item, index) => <li key={index} className='topheader__menu-item'
-                                                                         onClick={() => history.push(`${history.location.pathname}#${item.route}`)}>{item.name}</li>)
+                            config.posibilities.filter(authItem => {
+                                    if (auth.isAuthenticated) {
+                                        return authItem.route === 'logout'
+                                    }
+                                    return authItem.route !== 'logout'
+                                }
+                            ).map((item, index) => <li key={index} className='topheader__menu-item'
+                                                       onClick={() => this.topHeaderClick(item)}>{item.name}</li>)
                         }
                     </ul>
                 </div>
@@ -58,5 +81,6 @@ class TopHeader extends React.Component {
 }
 
 export default connect(state => ({
-    clinics: state.clinics
+    clinics: state.clinics,
+    auth: state.auth
 }))(TopHeader)

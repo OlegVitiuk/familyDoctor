@@ -535,6 +535,8 @@ table {
 
 .login-form {
   width: 300px; }
+  .login-form__error {
+    margin-top: 10px; }
 
 .login-form__title {
   text-align: left; }

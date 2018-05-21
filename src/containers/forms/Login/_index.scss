@@ -1,6 +1,10 @@
 .login-form {
   @extend %form;
   width: 300px;
+
+  &__error{
+    margin-top: 10px;
+  }
 }
 
 .login-form__title {
