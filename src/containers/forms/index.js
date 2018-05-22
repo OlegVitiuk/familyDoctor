@@ -9,7 +9,7 @@ export default class FormsContainer extends React.Component{
         super(props);
 
         this.forms ={
-            login: <Login closeForm={this.closeForm}/>,
+            login: <Login closeForm={this.closeForm} history={history}/>,
             registration: <Registration closeForm={this.closeForm}/>
         }
     }

@@ -1,27 +1,42 @@
 {
   "menu": [
-    {"name": "Врачи",
+    {
+      "name": "Врачи",
       "route": "doctors"
     },
-    {"name": "Клиники",
+    {
+      "name": "Клиники",
       "route": "clinics"
     },
-    {"name": "Диагностика",
+    {
+      "name": "Диагностика",
       "route": "diagnostics"
     },
-    {"name": "Лаборатории",
+    {
+      "name": "Лаборатории",
       "route": "laboratories"
     }
   ],
   "posibilities": [
-    {"name": "Регистрация",
-      "route": "registration"
+    {
+      "name": "Регистрация",
+      "route": "registration",
+      "auth": false
     },
-    {"name": "Вход",
-      "route": "login"
+    {
+      "name": "Вход",
+      "route": "login",
+      "auth": false
     },
-    {"name": "Вихід",
-      "route": "logout"
+    {
+      "name": "Кабінет",
+      "route": "profile",
+      "auth": true
+    },
+    {
+      "name": "Вихід",
+      "route": "",
+      "auth": true
     }
   ]
 }

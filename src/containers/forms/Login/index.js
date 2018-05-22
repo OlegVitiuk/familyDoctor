@@ -13,10 +13,13 @@ class Login extends React.Component {
     };
 
     onSubmit = values => {
+        const {history} = this.props;
+
         return loginUser(values).then(() => {
             const user = jwt.decode(localStorage.getItem('jwtToken'))
             this.props.dispatch({type: SET_CURRENT_USER, user});
             this.props.closeForm();
+            history.push('/profile');
         }).catch(() => {
             throw new SubmissionError({_error: 'Невірний емейл або пароль'});
         });

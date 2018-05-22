@@ -403,6 +403,9 @@ table {
   margin: 0 auto;
   text-align: center; }
 
+.profile {
+  display: flex; }
+
 .form__wrapper {
   position: relative; }
 

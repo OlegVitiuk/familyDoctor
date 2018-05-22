@@ -29,9 +29,12 @@ class TopHeader extends React.Component {
         if (!auth.isAuthenticated) {
             history.push(`${history.location.pathname}#${item.route}`)
         } else {
-            localStorage.removeItem('jwtToken');
-            setAuthorizationToken(false);
-            dispatch({type: SET_CURRENT_USER}, {});
+            if (item.route !== 'profile') {
+                localStorage.removeItem('jwtToken');
+                setAuthorizationToken(false);
+                dispatch({type: SET_CURRENT_USER}, {});
+            }
+            history.push(`/${item.route}`);
         }
 
     }
@@ -61,14 +64,9 @@ class TopHeader extends React.Component {
                     </ul>
                     <ul className="topheader__menu-posibilities">
                         {
-                            config.posibilities.filter(authItem => {
-                                    if (auth.isAuthenticated) {
-                                        return authItem.route === 'logout'
-                                    }
-                                    return authItem.route !== 'logout'
-                                }
-                            ).map((item, index) => <li key={index} className='topheader__menu-item'
-                                                       onClick={() => this.topHeaderClick(item)}>{item.name}</li>)
+                            config.posibilities.filter(authItem => auth.isAuthenticated ? authItem.auth : !authItem.auth)
+                                .map((item, index) => <li key={index} className='topheader__menu-item'
+                                                          onClick={() => this.topHeaderClick(item)}>{item.name}</li>)
                         }
                     </ul>
                 </div>
