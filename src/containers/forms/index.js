@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Login from './Login';
 import Registration from './Registration';
+import Appoinment from './Appoinment';
 import {history} from '../../stores/store';
 
 export default class FormsContainer extends React.Component{
@@ -10,7 +11,8 @@ export default class FormsContainer extends React.Component{
 
         this.forms ={
             login: <Login closeForm={this.closeForm} history={history}/>,
-            registration: <Registration closeForm={this.closeForm}/>
+            registration: <Registration closeForm={this.closeForm}/>,
+            appoinment: <Appoinment closeForm={this.closeForm}/>
         }
     }
 

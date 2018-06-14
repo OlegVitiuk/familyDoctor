@@ -59,7 +59,7 @@ export default class Date extends React.Component {
         return (
             <div className="form-item">
                 <div className={`${meta.form}-form__label`}>
-                    {input.name}
+                    {input.label}
                 </div>
                 <div className="form__wrapper">
                     <DatePicker {...input}

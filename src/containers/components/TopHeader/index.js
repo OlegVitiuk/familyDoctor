@@ -10,7 +10,6 @@ import {SET_CURRENT_USER} from "constants/index";
 
 class TopHeader extends React.Component {
     static propTypes = {
-        history: PropTypes.object,
         clinics: PropTypes.arrayOf(PropTypes.object),
         auth: PropTypes.object
     };

@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {history} from 'stores/store';
 
 export default class Doctor extends React.Component {
 
     static propTypes = {
         item: PropTypes.object,
-        clinics: PropTypes.arrayOf(PropTypes.object)
+        clinics: PropTypes.arrayOf(PropTypes.object),
+        auth: PropTypes.object
     }
 
     getClinicInfo = clinicsId => {
@@ -24,6 +26,11 @@ export default class Doctor extends React.Component {
             name,
             street,
             metro
+        }
+    }
+    makeAppoinment = () =>{
+        if (this.props.auth.isAuthenticated) {
+            history.push(`${history.location.pathname}#appoinment`)
         }
     }
 
@@ -55,7 +62,7 @@ export default class Doctor extends React.Component {
                     </div>
                     <div className="doc__info-price">
                         <h3 className="doc__info-price-text">{`${item.price} грн`}</h3>
-                        <a href="#" className="doc__info-price-button">Записаться</a>
+                        <button disabled={!this.props.auth.isAuthenticated} className='doc__info-price-button' onClick={this.makeAppoinment}>Записатися</button>
                     </div>
                 </div>
             </div>
