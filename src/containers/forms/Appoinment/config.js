@@ -13,8 +13,7 @@ const fields = [
     {
         name: 'visitTime',
         label: 'Час візиту',
-        component: TimePicker,
-        validate: [required],
+        component: TimePicker
     }
 ];
 

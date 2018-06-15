@@ -18,8 +18,6 @@ class Registration extends React.Component {
     renderField = (field, i) => <Field {...field} key={i}/>;
 
     render() {
-        const {history} = this.props;
-
         return (
             <form onSubmit={this.props.handleSubmit(this.onSubmit)}
                   className="registration-form">

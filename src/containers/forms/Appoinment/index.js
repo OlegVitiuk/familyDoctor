@@ -29,7 +29,7 @@ class Appoinment extends React.Component {
                     <div className="appoinment-form__error">Поле обов'язкове</div>
                 )}
                 <div>
-                    <button type="submit" className="appoinment-form__btn"> Зареєструватись</button>
+                    <button type="submit" className="appoinment-form__btn">Записатись!</button>
                 </div>
             </form>
         );

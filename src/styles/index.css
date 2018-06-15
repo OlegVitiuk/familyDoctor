@@ -306,6 +306,10 @@ table {
 .react-datepicker__input-container {
   width: 100%; }
 
+.timeSheet {
+  display: flex;
+  flex-wrap: wrap; }
+
 .doc__list {
   display: flex;
   justify-content: center;

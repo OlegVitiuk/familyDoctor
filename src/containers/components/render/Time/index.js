@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 import {formValueSelector} from 'redux-form';
 import 'react-datepicker/dist/react-datepicker.css';
 import {connect} from "react-redux";
-import {getTimeSheetByDate} from "api/clinics";
+import {getTimeSheetByDate} from "api/doctor";
+import timeLine from './config';
+import CheckBox from './../CheckBox';
 
 class TimeSheet extends React.Component {
     static propTypes = {
         input: PropTypes.object,
         meta: PropTypes.object,
-        date: PropTypes.string,
-        initialDate: PropTypes.string,
         disabled: PropTypes.bool,
+        appoinmentDoctor: PropTypes.string
     };
 
     static defaultProps = {
@@ -19,15 +20,26 @@ class TimeSheet extends React.Component {
         meta: {},
     };
 
+    state = {
+        blockedTimelines: []
+    }
+
     componentWillReceiveProps(nextProps) {
-        if (this.props.date !== nextProps.date)
-            getTimeSheetByDate(nextProps.date).then((data) => {
-                console.log(data);
+        if (this.props.date !== nextProps.date) {
+            const data = {
+                date: nextProps.date,
+                id: nextProps.appoinmentDoctor
+            };
+            getTimeSheetByDate(data).then((data) => {
+                this.setState(() => ({
+                    blockedTimelines: data
+                }));
             });
+        }
     }
 
     render() {
-        const {input, meta, disabled} = this.props;
+        const {input, meta} = this.props;
         return (
             <div className="form-item">
                 <div className={`${meta.form}-form__label`}>
@@ -35,7 +47,14 @@ class TimeSheet extends React.Component {
                 </div>
                 <div className="form__wrapper">
                     <div className='timeSheet'>
-
+                        {
+                            timeLine.map((item) => {
+                                if (this.state.blockedTimelines.includes(item)) {
+                                    return <CheckBox key={Symbol(item).toString()} booked={true} label={item}/>;
+                                }
+                                return <CheckBox key={Symbol(item).toString()} label={item}/>;
+                            })
+                        }
                     </div>
                     {meta.touched &&
                     meta.error && (
@@ -52,4 +71,5 @@ class TimeSheet extends React.Component {
 const selector = formValueSelector('appoinment');
 export default connect(state => ({
     date: selector(state, 'visitDate'),
+    appoinmentDoctor: state.doctor.appoinmentDoctor
 }))(TimeSheet)

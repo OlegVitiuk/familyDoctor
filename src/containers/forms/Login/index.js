@@ -29,8 +29,6 @@ class Login extends React.Component {
 
     render() {
 
-        const {history} = this.props;
-
         return (
             <form onSubmit={this.props.handleSubmit(this.onSubmit)}
                   className="login-form">

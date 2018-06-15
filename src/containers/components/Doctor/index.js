@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {history} from 'stores/store';
+import {SET_APPOINMENT_DOCTOR} from "constants/index";
 
 export default class Doctor extends React.Component {
 
@@ -28,9 +29,11 @@ export default class Doctor extends React.Component {
             metro
         }
     }
-    makeAppoinment = () =>{
-        if (this.props.auth.isAuthenticated) {
-            history.push(`${history.location.pathname}#appoinment`)
+    makeAppoinment = (id) =>{
+        const {auth,dispatch} = this.props;
+        if (auth.isAuthenticated) {
+            history.push(`${history.location.pathname}#appoinment`);
+            dispatch({type: SET_APPOINMENT_DOCTOR, id: id});
         }
     }
 
@@ -42,7 +45,7 @@ export default class Doctor extends React.Component {
         return (
             <div className="doc">
                 <div className="doc__header">
-                    <img className="doc__header-img" src={item.photo}/>
+                    <img alt='avatar' className="doc__header-img" src={item.photo}/>
                     <div className="doc__header-content">
                         <span
                             className="doc__header-content-name">{`${item.name} ${item.surname} ${item.middleName}`}</span>
@@ -62,12 +65,11 @@ export default class Doctor extends React.Component {
                     </div>
                     <div className="doc__info-price">
                         <h3 className="doc__info-price-text">{`${item.price} грн`}</h3>
-                        <button disabled={!this.props.auth.isAuthenticated} className='doc__info-price-button' onClick={this.makeAppoinment}>Записатися</button>
+                        <button disabled={!this.props.auth.isAuthenticated} className='doc__info-price-button'
+                                onClick={()=>this.makeAppoinment(item._id)}>Записатися</button>
                     </div>
                 </div>
             </div>
         );
     }
-
-
 }
