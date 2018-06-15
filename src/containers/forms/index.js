@@ -16,6 +16,10 @@ export default class FormsContainer extends React.Component{
         }
     }
 
+    componentWillMount(){
+        history.push(`${history.location.pathname}`);
+    }
+
     closeForm = () =>{
         history.push(`${history.location.pathname}`);
     }

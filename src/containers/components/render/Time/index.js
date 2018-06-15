@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {formValueSelector} from 'redux-form';
+import {arrayPush} from 'redux-form';
 import 'react-datepicker/dist/react-datepicker.css';
-import {connect} from "react-redux";
-import {getTimeSheetByDate} from "api/doctor";
+import {getAppoinments} from "api/doctor";
 import timeLine from './config';
 import CheckBox from './../CheckBox';
 
-class TimeSheet extends React.Component {
+export default class TimeSheet extends React.Component {
     static propTypes = {
         input: PropTypes.object,
         meta: PropTypes.object,
@@ -30,12 +29,17 @@ class TimeSheet extends React.Component {
                 date: nextProps.date,
                 id: nextProps.appoinmentDoctor
             };
-            getTimeSheetByDate(data).then((data) => {
+            getAppoinments(data).then((data) => {
                 this.setState(() => ({
                     blockedTimelines: data
                 }));
             });
         }
+    }
+
+    addNewAppoinment = (label) => {
+        const {meta, input} = this.props;
+        meta.dispatch(arrayPush(meta.form, input.name, label));
     }
 
     render() {
@@ -48,12 +52,11 @@ class TimeSheet extends React.Component {
                 <div className="form__wrapper">
                     <div className='timeSheet'>
                         {
-                            timeLine.map((item) => {
-                                if (this.state.blockedTimelines.includes(item)) {
-                                    return <CheckBox key={Symbol(item).toString()} booked={true} label={item}/>;
-                                }
-                                return <CheckBox key={Symbol(item).toString()} label={item}/>;
-                            })
+                            timeLine.map((item) => (
+                                <CheckBox key={Symbol(item).toString()}
+                                          booked={this.state.blockedTimelines.includes(item)} label={item}
+                                          addNewAppoinment={this.addNewAppoinment}/>
+                            ))
                         }
                     </div>
                     {meta.touched &&
@@ -67,9 +70,3 @@ class TimeSheet extends React.Component {
         );
     }
 }
-
-const selector = formValueSelector('appoinment');
-export default connect(state => ({
-    date: selector(state, 'visitDate'),
-    appoinmentDoctor: state.doctor.appoinmentDoctor
-}))(TimeSheet)

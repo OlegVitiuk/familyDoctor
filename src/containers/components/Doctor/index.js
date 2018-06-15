@@ -29,11 +29,11 @@ export default class Doctor extends React.Component {
             metro
         }
     }
-    makeAppoinment = (id) =>{
+    makeAppoinment = (item) =>{
         const {auth,dispatch} = this.props;
         if (auth.isAuthenticated) {
             history.push(`${history.location.pathname}#appoinment`);
-            dispatch({type: SET_APPOINMENT_DOCTOR, id: id});
+            dispatch({type: SET_APPOINMENT_DOCTOR, item: item});
         }
     }
 
@@ -66,7 +66,7 @@ export default class Doctor extends React.Component {
                     <div className="doc__info-price">
                         <h3 className="doc__info-price-text">{`${item.price} грн`}</h3>
                         <button disabled={!this.props.auth.isAuthenticated} className='doc__info-price-button'
-                                onClick={()=>this.makeAppoinment(item._id)}>Записатися</button>
+                                onClick={()=>this.makeAppoinment(item)}>Записатися</button>
                     </div>
                 </div>
             </div>

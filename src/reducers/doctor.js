@@ -10,7 +10,7 @@ export const doctor = (state = {}, action) => {
         case SET_APPOINMENT_DOCTOR:
             return {
                 ...state,
-                appoinmentDoctor: action.id
+                appoinmentDoctor: action.item
             };
         default:
             return state

@@ -1,0 +1,24 @@
+.Select {
+  padding: 0;
+
+  & .Select-control {
+    @extend %input-color;
+    height: 100%;
+    border: none;
+    outline: none;
+
+    &:hover {
+      box-shadow: none;
+      outline: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  & .Select-placeholder {
+    @extend %input-color;
+    line-height: 46px;
+  }
+}

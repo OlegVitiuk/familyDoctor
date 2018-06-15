@@ -1,22 +1,69 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Field, propTypes, reduxForm} from 'redux-form';
-import fields from './config'
-
+import {Field, formValueSelector, propTypes, reduxForm} from 'redux-form';
+import {addAppoinment} from "api/doctor";
+import TimePicker from "../../components/render/Time";
+import DatePicker from "../../components/render/Date";
+import Select from "../../components/render/Select";
+import {required} from "../../../utils/formUtils";
+import {connect} from "react-redux";
 
 class Appoinment extends React.Component {
 
-    componentWillMount(){
+    static propsTypes = {
+        appoinmentDoctor: PropTypes.string
+    };
+
+    getInfoForClinics = (clinicsId) => {
+        const doctorClinics = this.props.clinics.filter((clinic) => clinicsId.includes(clinic._id));
+        return doctorClinics.map((item) => (
+                {
+                    label: item.name,
+                    value: item._id
+                }
+            )
+        );
     }
 
     renderField = (field, i) => <Field {...field} key={i}/>;
 
     onSubmit = values => {
-        //registerNewUser(values).catch(res => console.log(res));
+        const {appoinmentDoctor} = this.props;
+        const data = {
+            doctorId: appoinmentDoctor._id,
+            ...values
+        };
+        console.log(data)
+        addAppoinment(data).catch(res => console.log(res));
         this.props.closeForm();
     }
 
-    render(){
+    render() {
+        const {appoinmentDoctor} = this.props;
+        const fields = [
+            {
+                name: 'clinicId',
+                label: 'Клініка',
+                component: Select,
+                items: this.getInfoForClinics(appoinmentDoctor.clinics),
+                validate: [required],
+            },
+            {
+                name: 'date',
+                label: 'Дата візиту',
+                component: DatePicker,
+                validate: [required],
+                appoinment: true
+            },
+            {
+                name: 'time',
+                label: 'Час візиту',
+                component: TimePicker,
+                date: this.props.date,
+                appoinmentDoctor: appoinmentDoctor._id,
+                validate: [required],
+            }
+        ];
         return (
             <form onSubmit={this.props.handleSubmit(this.onSubmit)}
                   className="appoinment-form">
@@ -37,6 +84,11 @@ class Appoinment extends React.Component {
 
 }
 
-export default (reduxForm({
+const selector = formValueSelector('appoinment');
+export default connect(state => ({
+    appoinmentDoctor: state.doctor.appoinmentDoctor,
+    date: selector(state, 'date'),
+    clinics: state.clinics
+}))(reduxForm({
     form: 'appoinment'
 })(Appoinment));

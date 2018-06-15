@@ -8,6 +8,7 @@ export default class Checkbox extends React.Component {
 
     static propTypes = {
         label: PropTypes.string.isRequired,
+        addNewAppoinment: PropTypes.func.isRequired
     };
 
     state = {
@@ -15,11 +16,13 @@ export default class Checkbox extends React.Component {
     }
 
     toggleCheckbox = () => {
+        const {addNewAppoinment, label} = this.props;
         this.setState(({ isChecked }) => (
             {
                 isChecked: !isChecked,
             }
         ));
+        addNewAppoinment(label);
     }
 
     render() {
