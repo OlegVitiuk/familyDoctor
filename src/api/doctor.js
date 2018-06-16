@@ -4,4 +4,4 @@ export const getAppoinments = data =>
     api.post('/doctors/getAppoinments', data).then(res => res.data);
 
 export const addAppoinment = data =>
-    api.post('/doctors/getAppoinments', data).then(res => res.data);
+    api.post('/doctors/addAppoinment', data).then(res => res.data);

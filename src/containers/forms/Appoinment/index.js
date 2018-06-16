@@ -30,10 +30,12 @@ class Appoinment extends React.Component {
     onSubmit = values => {
         const {appoinmentDoctor} = this.props;
         const data = {
-            doctorId: appoinmentDoctor._id,
-            ...values
+            token: localStorage.getItem("jwtToken"),
+            data: {
+                doctorId: appoinmentDoctor._id,
+                ...values
+            }
         };
-        console.log(data)
         addAppoinment(data).catch(res => console.log(res));
         this.props.closeForm();
     }
