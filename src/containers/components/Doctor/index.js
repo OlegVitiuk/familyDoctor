@@ -8,7 +8,7 @@ export default class Doctor extends React.Component {
     static propTypes = {
         item: PropTypes.object,
         clinics: PropTypes.arrayOf(PropTypes.object),
-        auth: PropTypes.object
+        user: PropTypes.object
     }
 
     getClinicInfo = clinicsId => {
@@ -30,8 +30,8 @@ export default class Doctor extends React.Component {
         }
     }
     makeAppoinment = (item) =>{
-        const {auth,dispatch} = this.props;
-        if (auth.isAuthenticated) {
+        const {user,dispatch} = this.props;
+        if (user.isAuthenticated) {
             history.push(`${history.location.pathname}#appoinment`);
             dispatch({type: SET_APPOINMENT_DOCTOR, item: item});
         }
@@ -65,7 +65,7 @@ export default class Doctor extends React.Component {
                     </div>
                     <div className="doc__info-price">
                         <h3 className="doc__info-price-text">{`${item.price} грн`}</h3>
-                        <button disabled={!this.props.auth.isAuthenticated} className='doc__info-price-button'
+                        <button disabled={!this.props.user.isAuthenticated} className='doc__info-price-button'
                                 onClick={()=>this.makeAppoinment(item)}>Записатися</button>
                     </div>
                 </div>

@@ -1,4 +1,61 @@
-.profile{
+.profile {
   display: flex;
+  flex-direction: column;
 
+  &__info {
+    display: flex;
+
+    &-container{
+      display: flex;
+    }
+
+    &-image {
+      height: 120px;
+      width: 120px;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-left {
+      display: flex;
+      flex-direction: column;
+
+      & > span {
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 400;
+        margin-right: 10px;
+        margin-bottom: 5px;
+        color: #757575;
+        display: block;
+        text-align: right;
+      }
+    }
+    &-right {
+      display: flex;
+      flex-direction: column;
+
+      & > span {
+        font-size: 16px;
+        line-height: 18px;
+        font-weight: 400;
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &__name {
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  &__tabs{
+    display: flex;
+
+  }
 }

@@ -4,8 +4,9 @@ import {Field, reduxForm, SubmissionError} from 'redux-form';
 import fields from './config';
 import {loginUser} from "api/user";
 import {connect} from 'react-redux';
-import {SET_CURRENT_USER} from "constants/index";
-import jwt from 'jsonwebtoken';
+import {SET_AUTHORIZATON, SET_USER} from "constants/index";
+import {setAuthorizationToken} from "utils/index";
+import {getUserInfo} from "api/user";
 
 class Login extends React.Component {
     static propTypes = {
@@ -13,13 +14,19 @@ class Login extends React.Component {
     };
 
     onSubmit = values => {
-        const {history} = this.props;
+        const {history,dispatch} = this.props;
 
-        return loginUser(values).then(() => {
-            const user = jwt.decode(localStorage.getItem('jwtToken'))
-            this.props.dispatch({type: SET_CURRENT_USER, user});
-            this.props.closeForm();
-            history.push('/profile');
+        return loginUser(values).then((res) => {
+            const {token} = res.data;
+            localStorage.setItem('jwtToken', token);
+            setAuthorizationToken(token);
+            getUserInfo(token).then((user) => {
+                dispatch({type: SET_USER, user});
+                dispatch({type: SET_AUTHORIZATON, user});
+            }).then(() => {
+                this.props.closeForm();
+                history.push('/profile')
+            }).catch(() => this.props.closeForm());
         }).catch(() => {
             throw new SubmissionError({_error: 'Невірний емейл або пароль'});
         });

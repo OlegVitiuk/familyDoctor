@@ -15,18 +15,22 @@ class Doctors extends React.Component {
     }
 
     componentDidMount() {
+        if (!this.props.doctors.length) {
+            this.props.dispatch(getAllDoctors());
+        }
     }
 
 
     render() {
-        const {clinics, auth,dispatch} = this.props;
+        const {clinics, user, dispatch} = this.props;
         return (
             <div className='doctors'>
                 <h1 className="doc__list-title">Лікарі в Києві</h1>
                 <div className='doc__list'>
                     {
                         this.props.doctors.map(doctor => (
-                            <Doctor key={doctor["_id"] } item={doctor} clinics={clinics} auth={auth} dispatch ={dispatch}/>
+                            <Doctor key={doctor["_id"]} item={doctor} clinics={clinics} user={user}
+                                    dispatch={dispatch}/>
                         ))
                     }
                 </div>
@@ -38,5 +42,5 @@ class Doctors extends React.Component {
 export default connect(state => ({
     doctors: state.doctor.items,
     clinics: state.clinics,
-    auth: state.auth
+    user: state.user
 }))(Doctors)

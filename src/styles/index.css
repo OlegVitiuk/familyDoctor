@@ -57,6 +57,9 @@ body {
 span, h1, h2, h3, h4, a {
   font-family: 'ProximaNova', sans-serif !important; }
 
+.active {
+  border-bottom: 2px solid #E1312F; }
+
 @font-face {
   font-family: "Flaticon";
   src: url("../fonts/Flaticon.woff") format("embedded-opentype"), url("../fonts/Flaticon.woff") format("woff"), url("../fonts/Flaticon.ttf") format("truetype"), url("../fonts/Flaticon.svg#Flaticon") format("svg");
@@ -153,19 +156,21 @@ table {
   background-color: #ddd;
   width: 100%;
   border-bottom: 1px solid #e0e0e0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  padding-left: 30px; }
   .topheader__menu-posibilities, .topheader__menu-navigation {
     display: flex; }
   .topheader__menu-item {
-    transition: all 0.2s;
-    font-size: 18px;
-    line-height: 18px;
-    font-weight: 400;
-    display: block;
-    text-decoration: none;
-    color: #212121;
     padding: 25px 0;
-    margin: 0 30px; }
+    margin-right: 30px; }
+    .topheader__menu-item > a {
+      ransition: all 0.2s;
+      font-size: 18px;
+      line-height: 18px;
+      font-weight: 400;
+      display: block;
+      text-decoration: none;
+      color: #212121; }
 
 .topheader__info {
   display: flex;
@@ -571,7 +576,45 @@ table {
   text-align: center; }
 
 .profile {
-  display: flex; }
+  display: flex;
+  flex-direction: column; }
+  .profile__info {
+    display: flex; }
+    .profile__info-container {
+      display: flex; }
+    .profile__info-image {
+      height: 120px;
+      width: 120px; }
+    .profile__info-content {
+      display: flex;
+      flex-direction: column; }
+    .profile__info-left {
+      display: flex;
+      flex-direction: column; }
+      .profile__info-left > span {
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 400;
+        margin-right: 10px;
+        margin-bottom: 5px;
+        color: #757575;
+        display: block;
+        text-align: right; }
+    .profile__info-right {
+      display: flex;
+      flex-direction: column; }
+      .profile__info-right > span {
+        font-size: 16px;
+        line-height: 18px;
+        font-weight: 400;
+        margin-bottom: 5px; }
+  .profile__name {
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 600;
+    margin-bottom: 10px; }
+  .profile__tabs {
+    display: flex; }
 
 .form__wrapper {
   position: relative; }
