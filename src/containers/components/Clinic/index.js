@@ -33,6 +33,18 @@ export default class Clinic extends React.Component {
                 </div>
                 <div className="clinic__info">
                     <div className="clinic__info-name"><span>{clinic.name}</span></div>
+                    <div className="clinic__info-adress"><span>{`м.${clinic.adress.city}, ${clinic.adress.street}`}</span></div>
+                    <div className="clinic__info-region">
+                        <span className='clinic__info-region-name'>{`${clinic.adress.region}, Метро: `}</span>
+                        <span className='clinic__info-region-metro'>{clinic.adress.metro}</span>
+                    </div>
+                    <div className="clinic__info-directions">
+                        <span className="clinic__info-directions-name">Направлення: </span>
+                        <span className="clinic__info-directions-values">{clinic.destination}</span>
+                    </div>
+                    <div className='clinic__info-description'>
+                            {clinic.description}
+                    </div>
                 </div>
             </div>
         )

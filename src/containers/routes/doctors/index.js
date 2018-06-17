@@ -22,7 +22,7 @@ class Doctors extends React.Component {
         const {clinics, auth,dispatch} = this.props;
         return (
             <div className='doctors'>
-                <h1 className="doc__list-title">Врачі в Києві</h1>
+                <h1 className="doc__list-title">Лікарі в Києві</h1>
                 <div className='doc__list'>
                     {
                         this.props.doctors.map(doctor => (

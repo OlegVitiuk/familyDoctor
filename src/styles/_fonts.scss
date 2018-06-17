@@ -16,3 +16,11 @@
   font-weight: $font-weight-normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "ProximaNova-SemiBold";
+  src: url("../fonts/FontsFree-Net-Proxima-Nova-Sbold.otf") format("embedded-opentype"),
+  url("../fonts/FontsFree-Net-Proxima-Nova-Sbold.otf") format("otf");
+  font-weight: $font-weight-normal;
+  font-style: normal;
+}

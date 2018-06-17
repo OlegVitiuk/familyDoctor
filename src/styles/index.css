@@ -69,6 +69,12 @@ span, h1, h2, h3, h4, a {
   font-weight: 500;
   font-style: normal; }
 
+@font-face {
+  font-family: "ProximaNova-SemiBold";
+  src: url("../fonts/FontsFree-Net-Proxima-Nova-Sbold.otf") format("embedded-opentype"), url("../fonts/FontsFree-Net-Proxima-Nova-Sbold.otf") format("otf");
+  font-weight: 500;
+  font-style: normal; }
+
 .star-full:before, .form__close:before, .array-form__delete-button:before, .star-empty:before {
   display: inline-block;
   font-family: "Flaticon";
@@ -334,7 +340,8 @@ table {
   width: 66.5%; }
   .clinic__media {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    margin-right: 20px; }
   .clinic__photo {
     width: 120px;
     max-height: 120px;
@@ -371,11 +378,86 @@ table {
   .clinic__info {
     display: flex;
     flex-direction: column; }
+    .clinic__info-name {
+      overflow: hidden;
+      margin-bottom: 8px; }
+      .clinic__info-name > span {
+        transition: all 0.2s;
+        text-decoration: none;
+        font-size: 24px;
+        line-height: 29px;
+        font-weight: 600;
+        color: #1e88e5;
+        text-overflow: ellipsis; }
+    .clinic__info-adress {
+      overflow: hidden;
+      margin-bottom: 5px; }
+      .clinic__info-adress > span {
+        transition: all 0.2s;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 600;
+        color: #212121;
+        text-decoration: none;
+        font-family: "ProximaNova-SemiBold", "sans-serif" !important; }
+    .clinic__info-region {
+      display: flex; }
+      .clinic__info-region-name {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 400;
+        color: #212121;
+        display: inline-block; }
+      .clinic__info-region-metro {
+        color: #339933;
+        line-height: 20px; }
+    .clinic__info-directions {
+      font-size: 15px;
+      line-height: 24px;
+      font-weight: 400;
+      margin: 10px 0;
+      padding: 12px 0;
+      border-top: 1px solid #f5f5f5;
+      border-bottom: 1px solid #f5f5f5; }
+      .clinic__info-directions-name {
+        transition: all 0.2s;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 600;
+        color: #212121;
+        text-decoration: none;
+        font-family: "ProximaNova-SemiBold", "sans-serif" !important; }
+      .clinic__info-directions-values {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 400;
+        color: #212121;
+        display: inline-block; }
+    .clinic__info-description {
+      overflow: auto;
+      max-height: 140px;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 400;
+      color: rgba(0, 0, 0, 0.9);
+      margin-top: 10px; }
+      .clinic__info-description::-webkit-scrollbar {
+        width: 5px; }
+      .clinic__info-description::-webkit-scrollbar-track {
+        border-radius: 10px; }
+      .clinic__info-description::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #969dac; }
 
 .clinics__list {
   display: flex;
   justify-content: center;
   flex-direction: column; }
+  .clinics__list-title {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 600;
+    margin-bottom: 10px; }
 
 .clinics {
   box-sizing: border-box;
@@ -390,6 +472,11 @@ table {
   display: flex;
   justify-content: center;
   flex-direction: column; }
+  .doc__list-title {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 600;
+    margin-bottom: 10px; }
 
 .doctors {
   box-sizing: border-box;
