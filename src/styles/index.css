@@ -324,6 +324,68 @@ table {
   .Select .Select-placeholder {
     line-height: 46px; }
 
+.clinic {
+  display: flex;
+  padding: 20px;
+  background-color: #ffffff;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  width: 66.5%; }
+  .clinic__media {
+    display: flex;
+    flex-direction: column; }
+  .clinic__photo {
+    width: 120px;
+    max-height: 120px;
+    margin-bottom: 20px;
+    border: 3px solid #eee;
+    border-radius: 3px;
+    padding: 20px 15px;
+    position: relative;
+    text-align: center; }
+  .clinic__schedule {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px; }
+    .clinic__schedule-weekends, .clinic__schedule-weekdays {
+      display: flex;
+      justify-content: space-between; }
+      .clinic__schedule-weekends > span, .clinic__schedule-weekdays > span {
+        color: #212121; }
+  .clinic__services {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 160px; }
+    .clinic__services-item {
+      width: 33px;
+      height: 26px;
+      border-radius: 3px;
+      transition: 0.2s;
+      cursor: pointer;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      position: relative;
+      background: rgba(0, 0, 0, 0.1) center no-repeat;
+      background-size: 20px; }
+  .clinic__info {
+    display: flex;
+    flex-direction: column; }
+
+.clinics__list {
+  display: flex;
+  justify-content: center;
+  flex-direction: column; }
+
+.clinics {
+  box-sizing: border-box;
+  padding: 20px 30px;
+  background-color: #ececec;
+  height: 100%;
+  position: relative;
+  padding-bottom: 90px;
+  z-index: 0; }
+
 .doc__list {
   display: flex;
   justify-content: center;

@@ -1,0 +1,62 @@
+.clinic {
+  display: flex;
+  padding: 20px;
+  background-color: #ffffff;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  width: 66.5%;
+
+  &__media {
+    display: flex;
+    flex-direction: column;
+  }
+  &__photo {
+    width: 120px;
+    max-height: 120px;
+    margin-bottom: 20px;
+    border: 3px solid #eee;
+    border-radius: 3px;
+    padding: 20px 15px;
+    position: relative;
+    text-align: center;
+  }
+
+  &__schedule {
+    display: flex;
+    flex-direction: column;
+
+    &-weekends, &-weekdays {
+      display: flex;
+      justify-content: space-between;
+      & > span {
+        color: #212121;
+      }
+    }
+    margin-bottom: 15px;
+  }
+
+  &__services{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 160px;
+
+    &-item{
+      width: 33px;
+      height: 26px;
+      border-radius: 3px;
+      transition: 0.2s;
+      cursor: pointer;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      position: relative;
+      background: rgba(0, 0, 0, 0.1) center no-repeat;
+      background-size: 20px;
+    }
+  }
+
+  &__info{
+    display: flex;
+    flex-direction: column;
+  }
+}

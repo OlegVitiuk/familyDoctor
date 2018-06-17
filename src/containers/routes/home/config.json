@@ -3,22 +3,22 @@
     {"name": "Терапевт",
       "route": "/doctors/terapevt"
     },
-    {"name": "Гастроэнтерология",
+    {"name": "Гастроентерологія",
       "route": "/clinics/gastroenterologiya"
     },
-    {"name": "Кардиология",
+    {"name": "Кардіологія",
       "route": "/clinics/kardiologiya"
     },
-    {"name": "Стоматология",
+    {"name": "Стоматологія",
       "route": "/clinics/stomatologiya"
     },
-    {"name": "Хирургия",
+    {"name": "Хірургія",
       "route": "/clinics/hirurgiya"
     },
-    {"name": "Косметология",
+    {"name": "Косметологія",
       "route": "/clinics/kosmetologiya"
     },
-    {"name": "Дерматология",
+    {"name": "Дерматологія",
       "route": "/clinics/dermatologiya"
     }
   ]

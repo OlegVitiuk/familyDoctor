@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-//import {getUsers} from 'actions/userActions';
 import { Link } from 'react-router-dom';
-import './_index.scss';
 import config from './config';
+import {getAllClinics} from "actions/clinics";
+import {getAllDoctors} from "actions/doctor";
 
 class Home extends React.Component {
 
@@ -12,8 +12,10 @@ class Home extends React.Component {
       dispatch: PropTypes.func
     };
 
-    componentWillMount(){
-        //this.props.dispatch(getUsers());
+    componentDidMount(){
+        const {dispatch} = this.props;
+        dispatch(getAllDoctors());
+        dispatch(getAllClinics());
     }
 
     render() {
@@ -21,13 +23,13 @@ class Home extends React.Component {
             <div className='home'>
                 <div className="home__main">
                     <div className="main__welcome">
-                        <h1 className='main__greet'>Большой выбор врачей и клиник</h1>
-                        <span className="main__subtitle">Сравните информацию по рейтингам, отзывам, цене и подберите специалиста для себя и ваших близких в удобном районе</span>
+                        <h1 className='main__greet'>Великий вибір лікарів та клінік</h1>
+                        <span className="main__subtitle">Порівняйте інформацію по рейтингах, відгуках, ціні і підберіть спеціаліста для себе і ваших рідних в зручному районі</span>
                     </div>
                     <input className="home__search" type="search"
-                           placeholder="Специальность врача, процедура, имя доктора..."/>
+                           placeholder="Спеціальність лікаря, процедура, ім'я лікаря..."/>
                     <div className="home__popular">
-                        <p className="home__popular-text">Популярные запросы</p>
+                        <p className="home__popular-text">Популярні запити</p>
                         <ul className="home__popular-list">
                             {
                                 config.popularItems.map((item, index) => <li key={index}><Link to={`${item.route}`}
@@ -37,11 +39,6 @@ class Home extends React.Component {
                         </ul>
                     </div>
                 </div>
-                <div className="home__appointment"></div>
-                <div className="home__advantages"></div>
-                <div className="home__best"></div>
-                <div className="home__lastReviews"></div>
-                <div className="home__blog"></div>
             </div>
         );
     }
