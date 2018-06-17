@@ -579,15 +579,19 @@ table {
   display: flex;
   flex-direction: column; }
   .profile__info {
-    display: flex; }
+    display: flex;
+    background-color: rgba(225, 225, 225, 0.6);
+    padding: 30px; }
     .profile__info-container {
       display: flex; }
     .profile__info-image {
       height: 120px;
-      width: 120px; }
+      width: 120px;
+      background-size: contain; }
     .profile__info-content {
       display: flex;
-      flex-direction: column; }
+      flex-direction: column;
+      margin-left: 30px; }
     .profile__info-left {
       display: flex;
       flex-direction: column; }
@@ -614,7 +618,8 @@ table {
     font-weight: 600;
     margin-bottom: 10px; }
   .profile__tabs {
-    display: flex; }
+    display: flex;
+    background: #fff; }
 
 .form__wrapper {
   position: relative; }

@@ -14,22 +14,12 @@ class TopHeader extends React.Component {
         auth: PropTypes.object
     };
 
-    state = {
-        activeMenuItem: ''
-    };
-
     static defaultProps = {
         clinics: []
     };
 
     componentDidMount() {
         this.props.dispatch(getAllClinics());
-    }
-
-    setActiveMenuItem = (item) => {
-        this.setState(() => ({
-            activeMenuItem: item
-        }));
     }
 
     topHeaderClick(item) {
@@ -50,8 +40,8 @@ class TopHeader extends React.Component {
     }
 
     render() {
-        const {user} = this.props;
-        console.log(history)
+        const {user, routing} = this.props;
+
         return (
             <div className='topheader'>
                 <div className='topheader__info'>
@@ -69,21 +59,21 @@ class TopHeader extends React.Component {
                     <ul className='topheader__menu-navigation'>
                         {
                             config.menu.map((item, index) => <li
-                                className={`${history.location.pathname === item.route ? 'active' : '' } topheader__menu-item`}
+                                className={`${routing.location.pathname === `/${item.route}` ? 'active' : ''} topheader__menu-item`}
                                 key={index}>
-                                <Link to={`/${item.route}`}
-                                      onClick={() => this.setActiveMenuItem(item.route)}>{item.name}</Link>
+                                <Link to={`/${item.route}`}>{item.name}</Link>
                             </li>)
                         }
                     </ul>
-                    <ul className="topheader__menu-posibilities">
+                    < ul className="topheader__menu-posibilities">
                         {
                             config.posibilities.filter(authItem => user.isAuthenticated ? authItem.auth : !authItem.auth)
-                                .map((item, index) => <li key={index}
-                                                          className={`${history.location.pathname === `/${item.route}` ? 'active' : ''} topheader__menu-item`}
-                                                          onClick={() => {
-                                                              this.topHeaderClick(item);
-                                                          }}>{item.name}</li>)
+                                .map((item, index) => (
+                                        <li key={index}
+                                            className={`${routing.location.pathname === `/${item.route}` ? 'active' : ''} topheader__menu-item`}
+                                            onClick={() => this.topHeaderClick(item)}>{item.name}</li>
+                                    )
+                                )
                         }
                     </ul>
                 </div>
@@ -97,5 +87,6 @@ class TopHeader extends React.Component {
 
 export default connect(state => ({
     clinics: state.clinics,
-    user: state.user
+    user: state.user,
+    routing: state.routing
 }))(TopHeader)

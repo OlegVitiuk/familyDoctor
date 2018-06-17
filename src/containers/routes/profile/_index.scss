@@ -4,6 +4,8 @@
 
   &__info {
     display: flex;
+    background-color: rgba(225, 225, 225, 0.6);
+    padding: 30px;
 
     &-container{
       display: flex;
@@ -12,11 +14,13 @@
     &-image {
       height: 120px;
       width: 120px;
+      background-size: contain;
     }
 
     &-content {
       display: flex;
       flex-direction: column;
+      margin-left: 30px;
     }
 
     &-left {
@@ -56,6 +60,6 @@
 
   &__tabs{
     display: flex;
-
+    background: #fff;
   }
 }
