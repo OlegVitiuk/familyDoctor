@@ -103,16 +103,15 @@
       align-items: center;
       padding: 20px 40px;
 
-
       &-select {
         box-sizing: border-box;
         width: 225px;
 
-        &-bigger{
+        &-bigger {
           width: 400px;
         }
 
-        &-placeholder {
+        &-placeholder, &-value {
           font-size: 22px;
           line-height: 27px;
           background: none;

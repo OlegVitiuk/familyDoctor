@@ -24,11 +24,24 @@ class TopHeader extends React.Component {
         routing: {}
     };
 
+    state = {
+        filterOptions: {}
+    };
+
     componentDidMount() {
         const {dispatch} = this.props;
         dispatch(getAllClinics());
         dispatch(getAllDoctors());
 
+    }
+
+    setFilterOption = (selectedOption, filterType) => {
+        this.setState((prevState) => ({
+            filterOptions: {
+                ...prevState.filterOptions,
+                [filterType]: selectedOption
+            }
+        }));
     }
 
     topHeaderClick(item) {
@@ -49,7 +62,7 @@ class TopHeader extends React.Component {
 
     getArrayOfOptionsForSelect = (obj) => (
         obj.map(type => ({
-                text: type,
+                label: type,
                 value: type
             }
         )))
@@ -86,27 +99,27 @@ class TopHeader extends React.Component {
         const {doctorsTypes, clinicsTypes, regionTypes} = this.getOptionsForFilters();
         const generalOptions = [
             {
-                name: 'За зростанням рейтингу',
+                label: 'За зростанням рейтингу',
                 value: 'toBigRating'
             },
             {
-                name: 'За спаданням рейтингу',
+                label: 'За спаданням рейтингу',
                 value: 'toLowRating'
             },
             {
-                name: 'За спаданням ціни',
+                label: 'За спаданням ціни',
                 value: 'toLowPrice'
             },
             {
-                name: 'За зростанням ціни',
+                label: 'За зростанням ціни',
                 value: 'toBigPrice'
             },
             {
-                name: 'За зростанням досвіду',
+                label: 'За зростанням досвіду',
                 value: 'toBigExperience'
             },
             {
-                name: 'За спаданням досвіду досвіду',
+                label: 'За спаданням досвіду досвіду',
                 value: 'toLowExperience'
             },
         ];
@@ -144,12 +157,14 @@ class TopHeader extends React.Component {
             }
             return item.name !== 'doctorSpeciality'
         }).map((item) => (
-            <div className={`topheader__filter-item`}>
+            <div key={item.img} className={`topheader__filter-item`}>
                 <img src={item.img} alt="icon" className='topheader__filter-item-img'/>
                 <Select
                     placeholder={<div className='topheader__filter-item-select-placeholder'>{item.text}</div>}
                     options={item.items}
                     className={`topheader__filter-item-select ${item.specialClass ? item.specialClass : ''}`}
+                    value={this.state.filterOptions[item.name]}
+                    onChange={(selectedOption) => this.setFilterOption(selectedOption, item.name)}
                 />
             </div>
         ));
