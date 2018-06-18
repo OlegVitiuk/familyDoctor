@@ -2,6 +2,18 @@ body{
   box-sizing: border-box;
   min-width: 1300px;
   overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: $note-footer-color;
+  }
 }
 
 .file-form__blackout {
@@ -15,5 +27,9 @@ span, h1, h2,h3,h4,a{
 
 .active{
   border-bottom: 2px solid #E1312F;
+}
+
+.center{
+  text-align: center;
 }
 

@@ -50,6 +50,13 @@ body {
   box-sizing: border-box;
   min-width: 1300px;
   overflow-y: auto; }
+  body::-webkit-scrollbar {
+    width: 5px; }
+  body::-webkit-scrollbar-track {
+    border-radius: 10px; }
+  body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #969dac; }
 
 .file-form__blackout {
   overflow: auto; }
@@ -59,6 +66,9 @@ span, h1, h2, h3, h4, a {
 
 .active {
   border-bottom: 2px solid #E1312F; }
+
+.center {
+  text-align: center; }
 
 @font-face {
   font-family: "Flaticon";
@@ -181,10 +191,32 @@ table {
   height: 65px;
   margin: 0 auto;
   border-bottom: 1px solid #ddd;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  align-items: center; }
   .topheader__info-logo {
     height: 50px;
     width: 118px; }
+  .topheader__info-telephone {
+    font-size: 23px;
+    line-height: 27px;
+    font-weight: 600;
+    color: #212121;
+    display: inline-block;
+    margin-right: 10px;
+    letter-spacing: 2px; }
+  .topheader__info-place {
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 600;
+    float: right;
+    padding: 5px 30px 5px 12px;
+    border-radius: 100px;
+    background: #e0e0e0 url(https://ucarecdn.com/da9b15fb-4119-42bf-b521-bcbf7f4c7c3b/arrow_city.png) 93% center no-repeat;
+    color: #212121;
+    position: relative;
+    top: 8px;
+    cursor: pointer;
+    min-width: 40px; }
   .topheader__info-call, .topheader__info-search {
     display: flex;
     margin: 0 10px;
@@ -454,6 +486,9 @@ table {
         border-radius: 10px;
         background-color: #969dac; }
 
+.footer {
+  height: 100px; }
+
 .clinics__list {
   display: flex;
   justify-content: center;
@@ -619,7 +654,20 @@ table {
     margin-bottom: 10px; }
   .profile__tabs {
     display: flex;
-    background: #fff; }
+    background: #fff;
+    margin: 0 auto;
+    padding: 10px 30px 0 40px; }
+    .profile__tabs > span {
+      color: #559fe0;
+      display: inline-block;
+      margin-right: 30px;
+      padding-bottom: 10px;
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 600;
+      cursor: pointer;
+      -webkit-transition: color 0.15s linear;
+      transition: color 0.15s linear; }
 
 .form__wrapper {
   position: relative; }

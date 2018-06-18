@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 import {getAllClinics} from "actions/clinics";
 import {setAuthorizationToken} from "utils/index";
 import {SET_AUTHORIZATON, SET_USER} from "constants/index";
+import {getAllDoctors} from "actions/doctor";
 
 class TopHeader extends React.Component {
     static propTypes = {
@@ -19,7 +20,10 @@ class TopHeader extends React.Component {
     };
 
     componentDidMount() {
-        this.props.dispatch(getAllClinics());
+        const {dispatch} = this.props;
+        dispatch(getAllClinics());
+        dispatch(getAllDoctors());
+
     }
 
     topHeaderClick(item) {
@@ -45,18 +49,19 @@ class TopHeader extends React.Component {
         return (
             <div className='topheader'>
                 <div className='topheader__info'>
-                    <div className="topheader__info-call">
-                        <a href="/" onClick={() => this.setActiveMenuItem('/')}>
+                    <div>
+                        <a href="/">
                             <img className='topheader__info-logo'
                                  src="https://ucarecdn.com/de59fd3c-e683-4cd2-a211-f0183d145671/download.png"
                                  alt="logo"/>
                         </a>
-                        <div className='topheader__info-place'>Киев</div>
-                        <span className="topheader__info-call-item">0956289359</span>
                     </div>
+                    <div className="topheader__info-telephone">+380956289359</div>
+                    <div className='topheader__info-place'>Київ</div>
                 </div>
                 <div className='topheader__menu'>
-                    <ul className='topheader__menu-navigation'>
+                    < ul
+                        className='topheader__menu-navigation'>
                         {
                             config.menu.map((item, index) => <li
                                 className={`${routing.location.pathname === `/${item.route}` ? 'active' : ''} topheader__menu-item`}
@@ -65,13 +70,14 @@ class TopHeader extends React.Component {
                             </li>)
                         }
                     </ul>
-                    < ul className="topheader__menu-posibilities">
+                    <ul
+                        className="topheader__menu-posibilities">
                         {
                             config.posibilities.filter(authItem => user.isAuthenticated ? authItem.auth : !authItem.auth)
                                 .map((item, index) => (
                                         <li key={index}
                                             className={`${routing.location.pathname === `/${item.route}` ? 'active' : ''} topheader__menu-item`}
-                                            onClick={() => this.topHeaderClick(item)}>{item.name}</li>
+                                            onClick={() => this.topHeaderClick(item)}><a>{item.name}</a></li>
                                     )
                                 )
                         }
@@ -81,7 +87,7 @@ class TopHeader extends React.Component {
 
                 </div>
             </div>
-        );
+        )
     }
 }
 

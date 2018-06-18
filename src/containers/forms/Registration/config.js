@@ -18,7 +18,16 @@ const fields = [
         type: 'text',
         placeholder: 'lawyer@example.com',
         validate: [required],
-    }, {
+    },
+    {
+        name: 'middleName',
+        label: 'По-батькові',
+        component: Input,
+        type: 'text',
+        placeholder: '',
+        validate: [required],
+    },
+    {
         name: 'birthday',
         label: 'День народження',
         component: DatePicker,
@@ -44,8 +53,8 @@ const fields = [
         name: 'telephone',
         label: 'Телефон',
         component: Input,
-        type: 'password',
-        placeholder: 'password',
+        type: 'tel',
+        placeholder: 'telephone',
         validate: [required, phoneNumber],
     },
 ];

@@ -14,13 +14,6 @@ class Doctors extends React.Component {
         doctors: []
     }
 
-    componentDidMount() {
-        if (!this.props.doctors.length) {
-            this.props.dispatch(getAllDoctors());
-        }
-    }
-
-
     render() {
         const {clinics, user, dispatch} = this.props;
         return (

@@ -38,11 +38,36 @@
     margin: 0 auto;
     border-bottom: 1px solid #ddd;
     box-sizing: border-box;
+    align-items: center;
 
     &-logo{
       height: 50px;
       width: 118px;
+    }
 
+    &-telephone{
+      font-size: 23px;
+      line-height: 27px;
+      font-weight: 600;
+      color: #212121;
+      display: inline-block;
+      margin-right: 10px;
+      letter-spacing: 2px;
+    }
+
+    &-place{
+      font-size: 13px;
+      line-height: 16px;
+      font-weight: 600;
+      float: right;
+      padding: 5px 30px 5px 12px;
+      border-radius: 100px;
+      background: #e0e0e0 url(https://ucarecdn.com/da9b15fb-4119-42bf-b521-bcbf7f4c7c3b/arrow_city.png) 93% center no-repeat;
+      color: #212121;
+      position: relative;
+      top: 8px;
+      cursor: pointer;
+      min-width: 40px;
     }
 
     &-call,&-search{
