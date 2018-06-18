@@ -8,6 +8,9 @@ import {getAllClinics} from "actions/clinics";
 import {setAuthorizationToken} from "utils/index";
 import {SET_AUTHORIZATON, SET_USER} from "constants/index";
 import {getAllDoctors} from "actions/doctor";
+import {uniqBy} from 'lodash';
+import Select from 'react-select';
+import 'react-select/dist/react-select.css';
 
 class TopHeader extends React.Component {
     static propTypes = {
@@ -16,7 +19,9 @@ class TopHeader extends React.Component {
     };
 
     static defaultProps = {
-        clinics: []
+        clinics: [],
+        doctors: [],
+        routing: {}
     };
 
     componentDidMount() {
@@ -40,7 +45,114 @@ class TopHeader extends React.Component {
             }
             history.push(`/${item.route}`);
         }
+    }
 
+    getArrayOfOptionsForSelect = (obj) => (
+        obj.map(type => ({
+                text: type,
+                value: type
+            }
+        )))
+
+    getOptionsForFilters = () => {
+        const {doctors, clinics} = this.props;
+        let doctorsTypes = [];
+        let clinicsTypes = [];
+        let regionTypes = [];
+
+        doctors.forEach((doctor) => {
+            doctorsTypes = doctorsTypes.concat(doctor.type);
+        });
+        clinics.forEach((clinic) => {
+            clinicsTypes = clinicsTypes.concat(clinic.destination.split(', '));
+            regionTypes = regionTypes.concat(clinic.adress.region)
+        });
+
+        doctorsTypes = uniqBy(doctorsTypes);
+        clinicsTypes = uniqBy(clinicsTypes);
+        regionTypes = uniqBy(regionTypes);
+
+        doctorsTypes = this.getArrayOfOptionsForSelect(doctorsTypes);
+        clinicsTypes = this.getArrayOfOptionsForSelect(clinicsTypes);
+        regionTypes = this.getArrayOfOptionsForSelect(regionTypes);
+
+        return {
+            doctorsTypes, clinicsTypes, regionTypes
+        }
+    }
+
+    renderFilter() {
+        const {doctors, clinics, routing} = this.props;
+        const {doctorsTypes, clinicsTypes, regionTypes} = this.getOptionsForFilters();
+        const generalOptions = [
+            {
+                name: 'За зростанням рейтингу',
+                value: 'toBigRating'
+            },
+            {
+                name: 'За спаданням рейтингу',
+                value: 'toLowRating'
+            },
+            {
+                name: 'За спаданням ціни',
+                value: 'toLowPrice'
+            },
+            {
+                name: 'За зростанням ціни',
+                value: 'toBigPrice'
+            },
+            {
+                name: 'За зростанням досвіду',
+                value: 'toBigExperience'
+            },
+            {
+                name: 'За спаданням досвіду досвіду',
+                value: 'toLowExperience'
+            },
+        ];
+        let filterItemsConfig = [
+            {
+                name: 'doctorSpeciality',
+                img: 'https://ucarecdn.com/0033d81c-46a9-4dd9-9a7e-c82e1d1e53a8/Doctor.png',
+                items: doctorsTypes,
+                text: "Всі спеціальності"
+            },
+            {
+                name: "clinicDestination",
+                img: 'https://ucarecdn.com/b62cc7c4-9340-413e-a84d-a57f4a7ed012/Clinic_list.png',
+                items: clinicsTypes,
+                text: "Всі напрямки"
+            },
+            {
+                name: "region",
+                img: 'https://ucarecdn.com/ff9d2fb1-fc62-4c08-8fc6-6a783efc8cd2/Pointer.png',
+                items: regionTypes,
+                text: "Всі райони і метро"
+            },
+            {
+                name: "rating",
+                img: 'https://ucarecdn.com/7b4e3af7-0e21-41e9-a161-747730911de4/Descending_Sorting.png',
+                items: generalOptions,
+                text: "Від більшого рейтингу до меншого",
+                specialClass: 'topheader__filter-item-select-bigger'
+            }
+        ];
+
+        return filterItemsConfig.filter(item => {
+            if (routing.location.pathname === '/doctors') {
+                return item.name !== 'clinicDestination'
+            }
+            return item.name !== 'doctorSpeciality'
+        }).map((item) => (
+            <div className={`topheader__filter-item`}>
+                <img src={item.img} alt="icon" className='topheader__filter-item-img'/>
+                <Select
+                    placeholder={<div className='topheader__filter-item-select-placeholder'>{item.text}</div>}
+                    options={item.items}
+                    className={`topheader__filter-item-select ${item.specialClass ? item.specialClass : ''}`}
+                />
+            </div>
+        ));
     }
 
     render() {
@@ -84,7 +196,9 @@ class TopHeader extends React.Component {
                     </ul>
                 </div>
                 <div className="topheader__filter">
-
+                    {
+                        this.renderFilter()
+                    }
                 </div>
             </div>
         )
@@ -93,6 +207,7 @@ class TopHeader extends React.Component {
 
 export default connect(state => ({
     clinics: state.clinics,
+    doctors: state.doctor.items,
     user: state.user,
     routing: state.routing
 }))(TopHeader)

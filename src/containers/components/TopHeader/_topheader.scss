@@ -1,5 +1,5 @@
-.topheader{
-  &__menu{
+.topheader {
+  &__menu {
     display: flex;
     justify-content: space-between;
     background-color: #ddd;
@@ -8,13 +8,13 @@
     box-sizing: border-box;
     padding-left: 30px;
 
-    &-posibilities,&-navigation{
+    &-posibilities, &-navigation {
       display: flex;
     }
 
-    &-item{
+    &-item {
 
-      &>a{
+      & > a {
         ransition: all 0.2s;
         font-size: 18px;
         line-height: 18px;
@@ -28,7 +28,7 @@
     }
   }
 
-  &__info{
+  &__info {
     display: flex;
     justify-content: space-between;
     background-color: #fff;
@@ -40,12 +40,12 @@
     box-sizing: border-box;
     align-items: center;
 
-    &-logo{
+    &-logo {
       height: 50px;
       width: 118px;
     }
 
-    &-telephone{
+    &-telephone {
       font-size: 23px;
       line-height: 27px;
       font-weight: 600;
@@ -55,7 +55,7 @@
       letter-spacing: 2px;
     }
 
-    &-place{
+    &-place {
       font-size: 13px;
       line-height: 16px;
       font-weight: 600;
@@ -70,15 +70,15 @@
       min-width: 40px;
     }
 
-    &-call,&-search{
+    &-call, &-search {
       display: flex;
       margin: 0 10px;
       align-items: center;
 
-      &-item{
+      &-item {
         margin: 10px;
       }
-      &-form{
+      &-form {
         background: #e0e0e0 97% center no-repeat;
         border-radius: 100px;
         padding: 5px 30px 5px 12px;
@@ -92,6 +92,39 @@
         margin-right: 10px;
         cursor: pointer;
       }
+    }
+  }
+
+  &__filter {
+    display: flex;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      padding: 20px 40px;
+
+
+      &-select {
+        box-sizing: border-box;
+        width: 225px;
+
+        &-bigger{
+          width: 400px;
+        }
+
+        &-placeholder {
+          font-size: 22px;
+          line-height: 27px;
+          background: none;
+          color: #212121;
+        }
+      }
+
+      &-img {
+        width: 23px;
+        height: 23px;
+      }
+
     }
   }
 }

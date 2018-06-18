@@ -237,6 +237,26 @@ table {
       margin-right: 10px;
       cursor: pointer; }
 
+.topheader__filter {
+  display: flex; }
+  .topheader__filter-item {
+    display: flex;
+    align-items: center;
+    padding: 20px 40px; }
+    .topheader__filter-item-select {
+      box-sizing: border-box;
+      width: 225px; }
+      .topheader__filter-item-select-bigger {
+        width: 400px; }
+      .topheader__filter-item-select-placeholder {
+        font-size: 22px;
+        line-height: 27px;
+        background: none;
+        color: #212121; }
+    .topheader__filter-item-img {
+      width: 23px;
+      height: 23px; }
+
 .doc {
   display: flex;
   background-color: #ffffff;
