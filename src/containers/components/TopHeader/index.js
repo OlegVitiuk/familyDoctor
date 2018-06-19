@@ -53,22 +53,28 @@ class TopHeader extends React.Component {
                 name: 'rating',
                 value: 'rating'
             }];
-        let correctFilterType = '';
-        config.forEach(item => {
-                if (item.name === filterType) {
-                    correctFilterType = item.value;
+        if (selectedOption) {
+            let correctFilterType = '';
+            config.forEach(item => {
+                    if (item.name === filterType) {
+                        correctFilterType = item.value;
+                    }
                 }
-            }
-        )
-        this.setState((prevState) => ({
-            filterOptions: [
-                ...prevState.filterOptions,
-                {
-                    nameOfField: correctFilterType,
-                    value: selectedOption.value
-                }
-            ]
-        }), () => this.props.dispatch({type: FILTER_DOCTORS, filterOptions: this.state.filterOptions}));
+            )
+            this.setState((prevState) => ({
+                filterOptions: [
+                    ...prevState.filterOptions,
+                    {
+                        nameOfField: correctFilterType,
+                        value: selectedOption.value
+                    }
+                ]
+            }), () => this.props.dispatch({type: FILTER_DOCTORS, filterOptions: this.state.filterOptions}));
+        } else {
+            this.setState((prevState) => ({
+                filterOptions: []
+            }), () => this.props.dispatch({type: FILTER_DOCTORS, filterOptions: this.state.filterOptions}));
+        }
     }
 
     topHeaderClick(item) {

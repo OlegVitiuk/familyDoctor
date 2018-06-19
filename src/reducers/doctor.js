@@ -17,21 +17,27 @@ export const doctor = (state = {
             };
         case FILTER_DOCTORS:
             const {filterOptions} = action;
-            // return {
-            //     ...state,
-            //     items: state.items.filter((item) => {
-            //         filterOptions.forEach(option => {
-            //             item[option.nameOfField]
-            //         })
-            //         return item[filterOptions.name] !== filterOptions.value
-            //     })
-            // }
+            if (filterOptions.length) {
+                return {
+                    ...state,
+                    filterItems: state.items.filter(item =>
+                        item[filterOptions[0].nameOfField].includes(filterOptions[0].value)
+                    )
+                }
+            }
             return {
                 ...state,
-                filterItems: state.items.filter(item =>
-                    item[filterOptions[0].nameOfField].includes(filterOptions[0].value)
-                )
+                filterItems: []
             }
+        // return {
+        //     ...state,
+        //     items: state.items.filter((item) => {
+        //         filterOptions.forEach(option => {
+        //             item[option.nameOfField]
+        //         })
+        //         return item[filterOptions.name] !== filterOptions.value
+        //     })
+        // }
         default:
             return state
     }
