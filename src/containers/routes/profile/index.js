@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ReactTable, {ReactTableDefaults } from "react-table";
-import 'react-table/react-table.css'
-
+import ReactTable, {ReactTableDefaults} from "react-table";
+import 'react-table/react-table.css';
 import {connect} from 'react-redux';
+import Input from "../../components/render/Input";
 
 const menuConfig = [
     {
@@ -13,6 +13,27 @@ const menuConfig = [
     {
         name: 'appointments',
         value: 'Записи'
+    }
+];
+
+const profileConfig = [
+    {
+        name: 'name',
+        value: 'Ім\'я'
+    }, {
+        name: 'surname',
+        value: 'Прізвище'
+    }, {
+        name: 'middleName',
+        value: 'По-батькові'
+    },
+    {
+        name: 'email',
+        value: 'Почта'
+    },
+    {
+        name: 'telephone',
+        value: 'Телефон'
     }
 ];
 
@@ -31,7 +52,7 @@ class Profile extends React.Component {
         activeMenuItem: item
     }));
 
-    changeLanguageReactTable = () =>{
+    changeLanguageReactTable = () => {
         Object.assign(ReactTableDefaults, {
             previousText: "Попередня",
             nextText: "Наступна",
@@ -125,8 +146,25 @@ class Profile extends React.Component {
                     {
                         activeMenuItem === 'profile'
                             ? (
-                                < div className="profile__change">
-
+                                <div className="profile__change">
+                                    <div className="profile__change-content">
+                                        <span className={'profile__change-content-text'}>Персональні дані</span>
+                                        {
+                                            profileConfig.map(el => (
+                                                <Input key={el.value} label={el.value} className={'profile'}
+                                                       input={{value: user[el.name]}}/>
+                                            ))
+                                        }
+                                        <div>
+                                            <button type="submit" className="profile__btn">Зберегти</button>
+                                        </div>
+                                    </div>
+                                    <div className="profile__change-password">
+                                        <span className={'profile__change-content-text'}>Управління паролями</span>
+                                        <Input className='profile' label={'Новий пароль'}/>
+                                        <Input className='profile' label={'Повторіть пароль'}/>
+                                        <button type="submit" className="profile__btn">Змінити пароль</button>
+                                    </div>
                                 </div>
                             ) : (
                                 <div className="profile__appointments">

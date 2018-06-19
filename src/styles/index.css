@@ -9,23 +9,23 @@
   text-decoration: underline;
   color: #ffc410; }
 
-.Select .Select-control, .Select .Select-placeholder, .login-form__input, .registration-form__input, .appoinment-form__input {
+.Select .Select-control, .Select .Select-placeholder, .login-form__input, .registration-form__input, .profile_input, .appoinment-form__input {
   outline: none;
   background: #fdfdfd;
   transition: background 0.3s ease-in-out; }
-  .Select .Select-control .header__input::-webkit-input-placeholder, .Select .Select-placeholder .header__input::-webkit-input-placeholder, .login-form__input .header__input::-webkit-input-placeholder, .registration-form__input .header__input::-webkit-input-placeholder, .appoinment-form__input .header__input::-webkit-input-placeholder {
+  .Select .Select-control .header__input::-webkit-input-placeholder, .Select .Select-placeholder .header__input::-webkit-input-placeholder, .login-form__input .header__input::-webkit-input-placeholder, .registration-form__input .header__input::-webkit-input-placeholder, .profile_input .header__input::-webkit-input-placeholder, .appoinment-form__input .header__input::-webkit-input-placeholder {
     color: #9b9b9b;
     font-size: 14px; }
-  .Select .Select-control .header__input:-moz-placeholder, .Select .Select-placeholder .header__input:-moz-placeholder, .login-form__input .header__input:-moz-placeholder, .registration-form__input .header__input:-moz-placeholder, .appoinment-form__input .header__input:-moz-placeholder {
+  .Select .Select-control .header__input:-moz-placeholder, .Select .Select-placeholder .header__input:-moz-placeholder, .login-form__input .header__input:-moz-placeholder, .registration-form__input .header__input:-moz-placeholder, .profile_input .header__input:-moz-placeholder, .appoinment-form__input .header__input:-moz-placeholder {
     color: #9b9b9b;
     font-size: 14px; }
-  .Select .Select-control .header__input::-moz-placeholder, .Select .Select-placeholder .header__input::-moz-placeholder, .login-form__input .header__input::-moz-placeholder, .registration-form__input .header__input::-moz-placeholder, .appoinment-form__input .header__input::-moz-placeholder {
+  .Select .Select-control .header__input::-moz-placeholder, .Select .Select-placeholder .header__input::-moz-placeholder, .login-form__input .header__input::-moz-placeholder, .registration-form__input .header__input::-moz-placeholder, .profile_input .header__input::-moz-placeholder, .appoinment-form__input .header__input::-moz-placeholder {
     color: #9b9b9b;
     font-size: 14px; }
-  .Select .Select-control .header__input:-ms-input-placeholder, .Select .Select-placeholder .header__input:-ms-input-placeholder, .login-form__input .header__input:-ms-input-placeholder, .registration-form__input .header__input:-ms-input-placeholder, .appoinment-form__input .header__input:-ms-input-placeholder {
+  .Select .Select-control .header__input:-ms-input-placeholder, .Select .Select-placeholder .header__input:-ms-input-placeholder, .login-form__input .header__input:-ms-input-placeholder, .registration-form__input .header__input:-ms-input-placeholder, .profile_input .header__input:-ms-input-placeholder, .appoinment-form__input .header__input:-ms-input-placeholder {
     color: #9b9b9b;
     font-size: 14px; }
-  .Select .Select-control:focus, .Select .Select-placeholder:focus, .login-form__input:focus, .registration-form__input:focus, .appoinment-form__input:focus {
+  .Select .Select-control:focus, .Select .Select-placeholder:focus, .login-form__input:focus, .registration-form__input:focus, .profile_input:focus, .appoinment-form__input:focus {
     background: #ffffff; }
 
 .file-form__blackout {
@@ -33,11 +33,11 @@
   height: 100%;
   width: 100%; }
 
-.doc__info-price-button, .login-form__btn, .registration-form__btn, .appoinment-form__btn {
+.profile__btn, .doc__info-price-button, .login-form__btn, .registration-form__btn, .appoinment-form__btn {
   border: 2px solid #ffc410;
   background-color: #ffc410;
   transition: all 0.3s ease-in-out; }
-  .doc__info-price-button:hover, .login-form__btn:hover, .registration-form__btn:hover, .appoinment-form__btn:hover {
+  .profile__btn:hover, .doc__info-price-button:hover, .login-form__btn:hover, .registration-form__btn:hover, .appoinment-form__btn:hover {
     background: none;
     border-color: #0f264f; }
 
@@ -72,6 +72,10 @@ span, h1, h2, h3, h4, a {
 
 .star-special {
   font-size: 17px; }
+
+.profile__btn {
+  width: 200px;
+  margin: 15px 0; }
 
 @font-face {
   font-family: "Flaticon";
@@ -658,6 +662,21 @@ table {
 .profile {
   display: flex;
   flex-direction: column; }
+  .profile__change {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 30px; }
+    .profile__change-content {
+      display: flex;
+      flex-direction: column; }
+      .profile__change-content-text {
+        padding: 10px 0 10px 10px;
+        font-weight: 600;
+        font-size: 18px;
+        color: rgba(43, 57, 68, 0.75); }
+    .profile__change-password {
+      display: flex;
+      flex-direction: column; }
   .profile__info {
     display: flex;
     background-color: rgba(225, 225, 225, 0.6);
@@ -946,7 +965,7 @@ table {
   .form-item__active {
     display: inline-block; }
 
-.login-form__input, .registration-form__input, .appoinment-form__input {
+.login-form__input, .registration-form__input, .profile_input, .appoinment-form__input {
   box-sizing: border-box;
   height: 47px;
   outline: none;
@@ -955,7 +974,7 @@ table {
   font-size: 14px;
   line-height: 27px; }
 
-.doc__info-price-button, .login-form__btn, .registration-form__btn, .appoinment-form__btn {
+.profile__btn, .doc__info-price-button, .login-form__btn, .registration-form__btn, .appoinment-form__btn {
   display: block;
   box-sizing: border-box;
   text-align: center;
@@ -1031,8 +1050,11 @@ table {
   font-size: 14px;
   margin: 21px 0 8px; }
 
-.registration-form__input {
+.registration-form__input, .profile_input {
   width: 300px; }
+
+.profile_input {
+  margin-bottom: 10px; }
 
 .registration-form__btn {
   width: 200px;

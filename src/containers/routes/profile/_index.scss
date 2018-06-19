@@ -2,6 +2,29 @@
   display: flex;
   flex-direction: column;
 
+  &__change {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 30px;
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+
+      &-text {
+        padding: 10px 0 10px 10px;
+        font-weight: 600;
+        font-size: 18px;
+        color: rgba(43, 57, 68, 0.75);
+      }
+    }
+
+    &-password {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
   &__info {
     display: flex;
     background-color: rgba(225, 225, 225, 0.6);

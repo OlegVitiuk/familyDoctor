@@ -13,10 +13,14 @@
   margin: 21px 0 8px;
 }
 
-.registration-form__input {
+.registration-form__input,.profile_input {
   @extend %input;
   @extend %input-color;
   width: 300px;
+}
+
+.profile_input{
+  margin-bottom: 10px;
 }
 
 .registration-form__btn  {

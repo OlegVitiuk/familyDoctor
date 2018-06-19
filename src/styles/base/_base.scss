@@ -1,4 +1,4 @@
-body{
+body {
   box-sizing: border-box;
   min-width: 1300px;
   overflow-y: auto;
@@ -21,19 +21,24 @@ body{
   overflow: auto;
 }
 
-span, h1, h2,h3,h4,a{
+span, h1, h2, h3, h4, a {
   font-family: 'ProximaNova', sans-serif !important;
 }
 
-.active{
+.active {
   border-bottom: 2px solid #E1312F;
 }
 
-.center{
+.center {
   text-align: center;
 }
 
-.star-special{
+.star-special {
   font-size: 17px;
 }
 
+.profile__btn {
+  @extend %form-btn;
+  width: 200px;
+  margin: 15px 0;
+}
