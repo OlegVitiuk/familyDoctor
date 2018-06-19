@@ -1,8 +1,10 @@
-import {GET_ALL_DOCTORS, SET_APPOINMENT_DOCTOR, FILTER_DOCTORS} from "constants/index";
+import {GET_ALL_DOCTORS, SET_APPOINMENT_DOCTOR, FILTER_DOCTORS,REMOVE_FILTER_OPTIONS} from "constants/index";
+import {SEARCH_ITEM} from "../constants";
 
 export const doctor = (state = {
     filterItems: [],
-    items: []
+    items: [],
+    filterOptions: []
 }, action) => {
     switch (action.type) {
         case GET_ALL_DOCTORS:
@@ -15,7 +17,7 @@ export const doctor = (state = {
                 ...state,
                 appoinmentDoctor: action.item
             };
-        case FILTER_DOCTORS:
+        case FILTER_DOCTORS: {
             const {filterOptions} = action;
             if (filterOptions.length) {
                 return {
@@ -29,15 +31,23 @@ export const doctor = (state = {
                 ...state,
                 filterItems: []
             }
-        // return {
-        //     ...state,
-        //     items: state.items.filter((item) => {
-        //         filterOptions.forEach(option => {
-        //             item[option.nameOfField]
-        //         })
-        //         return item[filterOptions.name] !== filterOptions.value
-        //     })
-        // }
+        }
+        case SEARCH_ITEM:
+            const {filterOptions} = action;
+            return {
+                ...state,
+                filterItems: state.items.filter(item =>
+                    item[filterOptions.nameOfField].includes(filterOptions.value)
+                ),
+                filterOptions: action.filterOptions
+            }
+        case REMOVE_FILTER_OPTIONS: {
+            return {
+                ...state,
+                filterItems: [],
+                filterOptions: {}
+            }
+        }
         default:
             return state
     }

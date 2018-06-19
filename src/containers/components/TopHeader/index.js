@@ -6,7 +6,7 @@ import {history} from 'stores/store';
 import {connect} from 'react-redux';
 import {getAllClinics} from "actions/clinics";
 import {setAuthorizationToken} from "utils/index";
-import {SET_AUTHORIZATON, SET_USER, FILTER_DOCTORS} from "constants/index";
+import {SET_AUTHORIZATON, SET_USER, FILTER_DOCTORS,REMOVE_FILTER_OPTIONS} from "constants/index";
 import {getAllDoctors} from "actions/doctor";
 import {uniqBy} from 'lodash';
 import Select from 'react-select';
@@ -21,18 +21,28 @@ class TopHeader extends React.Component {
     static defaultProps = {
         clinics: [],
         doctors: [],
-        routing: {}
+        routing: {},
+        filterItems: []
     };
 
     state = {
         filterOptions: []
     };
 
+    componentWillReceiveProps(nextProps) {
+        const {filterOptions} = nextProps;
+        if (Object.keys(filterOptions).length) {
+            this.setState((prevState) => ({
+                ...prevState,
+                filterOptions: [{...filterOptions}]
+            }));
+        }
+    }
+
     componentDidMount() {
         const {dispatch} = this.props;
         dispatch(getAllClinics());
         dispatch(getAllDoctors());
-
     }
 
     setFilterOption = (selectedOption, filterType) => {
@@ -73,7 +83,10 @@ class TopHeader extends React.Component {
         } else {
             this.setState((prevState) => ({
                 filterOptions: []
-            }), () => this.props.dispatch({type: FILTER_DOCTORS, filterOptions: this.state.filterOptions}));
+            }), () => {
+                this.props.dispatch({type: FILTER_DOCTORS, filterOptions: this.state.filterOptions});
+                this.props.dispatch({type: REMOVE_FILTER_OPTIONS, filterOptions: []});
+            });
         }
     }
 
@@ -258,5 +271,7 @@ export default connect(state => ({
     clinics: state.clinics,
     doctors: state.doctor.items,
     user: state.user,
-    routing: state.routing
+    routing: state.routing,
+    filterItems: state.doctor.filterItems,
+    filterOptions: state.doctor.filterOptions
 }))(TopHeader)
