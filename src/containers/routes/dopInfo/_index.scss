@@ -101,4 +101,119 @@
       margin: 0 30px;
     }
   }
+
+  &__content {
+    &__tabs {
+      display: flex;
+      background: #fff;
+      margin: 0 auto;
+      padding: 10px 30px 0 40px;
+
+      & > span {
+        color: #559fe0;
+        display: inline-block;
+        margin-right: 30px;
+        padding-bottom: 10px;
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 600;
+        cursor: pointer;
+        -webkit-transition: color 0.15s linear;
+        transition: color 0.15s linear;
+      }
+
+      &-reviews {
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+        background-color: #f5f5f5;
+      }
+
+      &-review {
+        display: flex;
+        background-color: #ffffff;
+        border: 1px solid #dfe1e3;
+        border-radius: 4px;
+        padding: 15px 20px;
+        margin-bottom: 5px;
+        padding-bottom: 30px;
+        width: 65%;
+        justify-content: space-between;
+
+        &__left, &__right {
+          display: flex;
+          flex-direction: column;
+        }
+
+        &__left {
+
+          &-text {
+            float: left;
+            padding-right: 20px;
+            display: block;
+            box-sizing: border-box;
+            margin-top: 17px;
+            font-size: 14px;
+            line-height: 20px;
+            width: 567px;
+            font-family: ProximaNova, sans-serif;
+          }
+          &-header {
+            display: flex;
+            align-items: center;
+
+            &__img {
+              border-radius: 50%;
+              height: 25px;
+              width: 20px;
+              display: block;
+              float: left;
+              margin-right: 14px;
+              background-repeat: no-repeat;
+              background-position: center;
+              background-color: rgba(73, 187, 29, 0.15);
+            }
+
+            &__name {
+              font-size: 16px;
+              line-height: 36px;
+              color: #232527;
+              font-weight: 700;
+              float: left;
+            }
+          }
+        }
+
+        &__right {
+          float: right;
+          max-width: 290px;
+          padding-left: 20px;
+
+          &-date {
+            float: right;
+            font-size: 13px;
+            color: #8e959c;
+            line-height: 36px;
+            margin-bottom: 20px;
+            text-align: end;
+          }
+
+          &-item {
+            display: flex;
+            margin-bottom: 14px;
+            justify-content: space-between;
+
+            &-text {
+              float: left;
+              margin-bottom: 0 !important;
+              font-size: 14px;
+              line-height: 16px;
+              font-weight: 600;
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
