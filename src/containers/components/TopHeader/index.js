@@ -186,9 +186,10 @@ class TopHeader extends React.Component {
 
         return filterItemsConfig.filter(item => {
             if (routing.location.pathname === '/doctors') {
-                return item.name !== 'clinicDestination'
+                return item.name !== 'clinicDestination';
+            } else if (routing.location.pathname === '/clinics') {
+                return item.name !== 'doctorSpeciality';
             }
-            return item.name !== 'doctorSpeciality'
         }).map((item) => (
             <div key={item.img} className={`topheader__filter-item`}>
                 <img src={item.img} alt="icon" className='topheader__filter-item-img'/>
