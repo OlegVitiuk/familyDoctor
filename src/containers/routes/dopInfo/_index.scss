@@ -1,0 +1,104 @@
+.dop-info {
+  display: flex;
+  flex-direction: column;
+
+  &__route {
+    margin-bottom: 0;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px 30px;
+    z-index: 1;
+
+    &-text {
+      color: #2a87d0;
+    }
+  }
+
+  &__doctor {
+    display: flex;
+    background-color: rgba(225, 225, 225, 0.6);
+    padding: 40px 0 20px;
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+
+      &-reviews {
+        float: left;
+        background: #42A5F5 url(https://ucarecdn.com/9fd03550-5ab2-44d5-9bdd-907a9094d673/arrow_comments_down.png) 95% center no-repeat;
+        padding: 4px 10px;
+        margin-left: 10px;
+        color: #fff;
+        border-radius: 100px;
+        padding-right: 30px;
+        font-size: 13px;
+        line-height: 18px;
+        font-weight: 600;
+        transition: 0.2s;
+        cursor: pointer;
+      }
+
+      &-experience {
+        display: flex;
+        align-items: center;
+
+        &-text {
+          color: #757575;
+          font-size: 14px;
+        }
+        &-img {
+          width: 18px;
+          background-size: contain;
+          margin-right: 10px;
+        }
+      }
+
+      &-rating {
+        display: flex;
+        align-items: center;
+
+        &-text, &-value {
+          line-height: 20px;
+        }
+
+        &-text {
+          padding-right: 5px;
+        }
+
+        &-value {
+          padding-left: 5px;
+          font-weight: 600;
+        }
+      }
+
+      &-status {
+        display: inline-block;
+        font-size: 14px;
+        line-height: 17px;
+        font-weight: 600;
+        color: #757575;
+        margin-bottom: 5px;
+      }
+
+      &-name {
+        font-size: 32px;
+        line-height: 32px;
+        font-family: ProximaNova-SemiBold, sans-serif;
+      }
+
+      &-types {
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: 400;
+        margin-bottom: 10px;
+      }
+    }
+
+    &-photo {
+      width: 120px;
+      height: 120px;
+      margin: 0 30px;
+    }
+  }
+}

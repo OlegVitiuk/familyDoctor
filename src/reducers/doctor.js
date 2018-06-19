@@ -1,5 +1,11 @@
-import {GET_ALL_DOCTORS, SET_APPOINMENT_DOCTOR, FILTER_DOCTORS,REMOVE_FILTER_OPTIONS} from "constants/index";
-import {SEARCH_ITEM} from "../constants";
+import {
+    GET_ALL_DOCTORS,
+    SET_APPOINMENT_DOCTOR,
+    FILTER_DOCTORS,
+    REMOVE_FILTER_OPTIONS,
+    SET_INFO_OF_SELECTED_OBJECT,
+    SEARCH_ITEM
+} from "constants/index";
 
 export const doctor = (state = {
     filterItems: [],
@@ -48,6 +54,12 @@ export const doctor = (state = {
                 filterOptions: {}
             }
         }
+
+        case SET_INFO_OF_SELECTED_OBJECT:
+            return {
+                ...state,
+                selectedItem: action.selectedObj
+            }
         default:
             return state
     }

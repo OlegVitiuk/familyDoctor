@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {history} from 'stores/store';
 import Rating from 'react-rating';
-import {SET_APPOINMENT_DOCTOR} from "constants/index";
+import {SET_APPOINMENT_DOCTOR,SET_INFO_OF_SELECTED_OBJECT} from "constants/index";
 
 export default class Doctor extends React.Component {
 
@@ -38,7 +38,8 @@ export default class Doctor extends React.Component {
         }
     }
 
-    openDopInfoPage = () => {
+    openDopInfoPage = (data) => {
+        this.props.dispatch({type: SET_INFO_OF_SELECTED_OBJECT, selectedObj: data})
         history.push(`${history.location.pathname}/dopInfo`);
     }
 
@@ -46,7 +47,10 @@ export default class Doctor extends React.Component {
         const {item} = this.props;
 
         const clinicsInfo = this.getClinicInfo(item.clinics);
-
+        const selectedObj = {
+            doctor: item,
+            clinics: clinicsInfo
+        };
         return (
             <div className="doc">
                 <div className="doc__header">
@@ -54,7 +58,7 @@ export default class Doctor extends React.Component {
                     <div className="doc__header-content">
                         <span
                             className="doc__header-content-name"
-                            onClick={this.openDopInfoPage}>{`${item.name} ${item.surname} ${item.middleName}`}</span>
+                            onClick={()=>this.openDopInfoPage(selectedObj)}>{`${item.name} ${item.surname} ${item.middleName}`}</span>
                         <span className="doc__header-content-type">{item.type.join(" ")}</span>
                         <span className="doc__header-content-status">{item.status}</span>
                     </div>
