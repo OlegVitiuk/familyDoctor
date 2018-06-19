@@ -33,11 +33,11 @@
   height: 100%;
   width: 100%; }
 
-.profile__btn, .doc__info-price-button, .login-form__btn, .registration-form__btn, .appoinment-form__btn {
+.profile__btn, .dopInfo__btn, .doc__info-price-button, .login-form__btn, .registration-form__btn, .appoinment-form__btn {
   border: 2px solid #ffc410;
   background-color: #ffc410;
   transition: all 0.3s ease-in-out; }
-  .profile__btn:hover, .doc__info-price-button:hover, .login-form__btn:hover, .registration-form__btn:hover, .appoinment-form__btn:hover {
+  .profile__btn:hover, .dopInfo__btn:hover, .doc__info-price-button:hover, .login-form__btn:hover, .registration-form__btn:hover, .appoinment-form__btn:hover {
     background: none;
     border-color: #0f264f; }
 
@@ -76,6 +76,9 @@ span, h1, h2, h3, h4, a {
 .profile__btn {
   width: 200px;
   margin: 15px 0; }
+
+.dopInfo__btn {
+  width: 200px; }
 
 @font-face {
   font-family: "Flaticon";
@@ -736,6 +739,57 @@ table {
 .dop-info {
   display: flex;
   flex-direction: column; }
+  .dop-info__clinic {
+    display: flex;
+    width: 65%;
+    flex-direction: column; }
+    .dop-info__clinic-content {
+      padding: 20px 0px;
+      background-color: #fff;
+      /* border-radius: 4px; */
+      border-bottom: 1px solid #e0e0e0;
+      margin-bottom: 0;
+      display: flex; }
+      .dop-info__clinic-content-price {
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+        .dop-info__clinic-content-price-value {
+          font-size: 24px;
+          line-height: 20px;
+          font-weight: 700;
+          color: #212121;
+          margin-bottom: 15px;
+          text-align: center; }
+      .dop-info__clinic-content-img {
+        width: 100px;
+        height: 100px;
+        border: 3px solid #eee;
+        padding: 5px 20px;
+        float: left;
+        margin-right: 30px; }
+      .dop-info__clinic-content-values {
+        display: flex;
+        flex-direction: column;
+        width: 55%; }
+        .dop-info__clinic-content-values-name {
+          color: #1e88e5;
+          font-size: 22px;
+          margin-bottom: 5px; }
+        .dop-info__clinic-content-values-adress {
+          font-size: 16px;
+          line-height: 24px;
+          font-weight: 400;
+          color: #757575; }
+        .dop-info__clinic-content-values-metro {
+          color: #325da4; }
+    .dop-info__clinic-text {
+      font-size: 22px;
+      line-height: 24px;
+      font-weight: 600;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 15px;
+      padding-top: 20px; }
   .dop-info__route {
     margin-bottom: 0;
     background-color: #fff;
@@ -974,7 +1028,7 @@ table {
   font-size: 14px;
   line-height: 27px; }
 
-.profile__btn, .doc__info-price-button, .login-form__btn, .registration-form__btn, .appoinment-form__btn {
+.profile__btn, .dopInfo__btn, .doc__info-price-button, .login-form__btn, .registration-form__btn, .appoinment-form__btn {
   display: block;
   box-sizing: border-box;
   text-align: center;

@@ -16,6 +16,7 @@ export default class Doctor extends React.Component {
         let name = '';
         let street = '';
         let metro = '';
+        let logoImage = '';
 
         const clinicsIdStr = clinicsId.join(' ');
         const clinicsForDoctor = this.props.clinics.filter(clinic => clinicsIdStr.includes(clinic._id));
@@ -23,11 +24,13 @@ export default class Doctor extends React.Component {
             name = name.concat(clinic.name).concat(' ');
             street = street.concat(clinic.adress.street).concat(' ');
             metro = metro.concat(clinic.adress.metro).concat(' ');
+            logoImage = clinic.logoImage;
         });
         return {
             name,
             street,
-            metro
+            metro,
+            logoImage
         }
     }
     makeAppoinment = (item) => {

@@ -2,7 +2,9 @@ import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {getAllDoctors} from "actions/doctor";
+import {history} from 'stores/store';
 import Rating from 'react-rating';
+import {SET_APPOINMENT_DOCTOR} from "constants/index";
 
 const menuConfig = [
     {
@@ -43,6 +45,14 @@ class DopInfo extends React.Component {
     changeMenuItem = (item) => this.setState(() => ({
         activeMenuItem: item
     }));
+
+    makeAppoinment = (item) => {
+        const {user, dispatch} = this.props;
+        if (user.isAuthenticated) {
+            history.push(`${history.location.pathname}#appoinment`);
+            dispatch({type: SET_APPOINMENT_DOCTOR, item: item});
+        }
+    }
 
     renderTab = (item) => {
         if(this.state.activeMenuItem === 'reviews'){
@@ -87,6 +97,8 @@ class DopInfo extends React.Component {
 
         if (Object.keys(doctorData).length) {
             const {doctor} = doctorData;
+            const {clinics} = doctorData;
+
             return (
                 <div>
                     <div className="dop-info__route">
@@ -121,7 +133,19 @@ class DopInfo extends React.Component {
                             </div>
                         </div>
                         <div className="dop-info__clinic">
-
+                            <span className="dop-info__clinic-text">{`Клініки в яких працює: 1`}</span>
+                            <div className='dop-info__clinic-content'>
+                                <img src={clinics.logoImage} alt="clinicImg" className='dop-info__clinic-content-img'/>
+                                <div className="dop-info__clinic-content-values">
+                                    <span className="dop-info__clinic-content-values-name">{clinics.name}</span>
+                                    <span className="dop-info__clinic-content-values-adress">{clinics.street}</span>
+                                    <span className="dop-info__clinic-content-values-metro">{`Метро: ${clinics.metro}`}</span>
+                                </div>
+                                <div className='dop-info__clinic-content-price'>
+                                    <span className="dop-info__clinic-content-price-value">{`${doctor.price} грн`}</span>
+                                    <button type="submit" className="dopInfo__btn" onClick={() => this.makeAppoinment(doctor)}>Записатися</button>
+                                </div>
+                            </div>
                         </div>
                         <div className="dop-info__content">
                             <div className="dop-info__content__tabs">
@@ -144,5 +168,6 @@ class DopInfo extends React.Component {
 }
 
 export default connect(state => ({
-    doctor: state.doctor
+    doctor: state.doctor,
+    user: state.user
 }))(DopInfo)

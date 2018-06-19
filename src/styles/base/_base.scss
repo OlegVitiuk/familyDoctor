@@ -42,3 +42,9 @@ span, h1, h2, h3, h4, a {
   width: 200px;
   margin: 15px 0;
 }
+
+.dopInfo__btn {
+  @extend %form-btn;
+  width: 200px;
+  //margin: 15px 0;
+}
