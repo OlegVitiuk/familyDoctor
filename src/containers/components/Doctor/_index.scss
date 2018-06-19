@@ -7,11 +7,41 @@
   flex-direction: column;
   width: 66.5%;
   margin: 10px 0;
+  position: relative;
 
   &__header{
     display: flex;
     border-bottom: 1px solid #e0e0e0;
     padding: 0 30px 20px;
+
+    &-rating{
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      right: 15px;
+      top: 15px;
+
+      &-content{
+        display: flex;
+      }
+
+      &-value{
+        font-size: 17px;
+      }
+
+      &-text{
+        margin-right: 4px;
+        font-size: 16px;
+        font-family: 'ProximaNova-SemiBold',sans-serif;
+      }
+
+      &-reviews{
+        text-align: center;
+        line-height: 14px;
+        margin-top: 3px;
+        color: #2a87d0;
+      }
+    }
 
     &-img{
       margin-right: 30px;
@@ -34,6 +64,10 @@
         line-height: 32px;
         font-weight: 600;
         color: #1e88e5;
+
+        &:hover{
+          color: rgba(30, 136, 229, 0.75);
+        }
       }
 
       &-type{

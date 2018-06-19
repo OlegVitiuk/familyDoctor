@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {history} from 'stores/store';
+import Rating from 'react-rating';
 import {SET_APPOINMENT_DOCTOR} from "constants/index";
 
 export default class Doctor extends React.Component {
@@ -13,8 +14,8 @@ export default class Doctor extends React.Component {
 
     getClinicInfo = clinicsId => {
         let name = '';
-        let street= '';
-        let metro =  '';
+        let street = '';
+        let metro = '';
 
         const clinicsIdStr = clinicsId.join(' ');
         const clinicsForDoctor = this.props.clinics.filter(clinic => clinicsIdStr.includes(clinic._id));
@@ -29,12 +30,16 @@ export default class Doctor extends React.Component {
             metro
         }
     }
-    makeAppoinment = (item) =>{
-        const {user,dispatch} = this.props;
+    makeAppoinment = (item) => {
+        const {user, dispatch} = this.props;
         if (user.isAuthenticated) {
             history.push(`${history.location.pathname}#appoinment`);
             dispatch({type: SET_APPOINMENT_DOCTOR, item: item});
         }
+    }
+
+    openDopInfoPage = () => {
+        history.push(`${history.location.pathname}/dopInfo`);
     }
 
     render() {
@@ -48,8 +53,18 @@ export default class Doctor extends React.Component {
                     <img alt='avatar' className="doc__header-img" src={item.photo}/>
                     <div className="doc__header-content">
                         <span
-                            className="doc__header-content-name">{`${item.name} ${item.surname} ${item.middleName}`}</span>
+                            className="doc__header-content-name"
+                            onClick={this.openDopInfoPage}>{`${item.name} ${item.surname} ${item.middleName}`}</span>
                         <span className="doc__header-content-type">{item.type.join(" ")}</span>
+                        <span className="doc__header-content-status">{item.status}</span>
+                    </div>
+                    <div className="doc__header-rating">
+                        <div className="doc__header-rating-content">
+                            <span className="doc__header-rating-text">{item.rating}</span>
+                            <Rating initialRating={item.rating} emptySymbol='star-empty star-special' fullSymbol='star-full star-special'/>
+                        </div>
+                        <span
+                            className='doc__header-rating-reviews'>{`${item.reviews.length} ${item.reviews.length === 1 ? 'відгук' : 'відгуків'}`}</span>
                     </div>
                 </div>
                 <div className='doc__info'>
@@ -66,7 +81,8 @@ export default class Doctor extends React.Component {
                     <div className="doc__info-price">
                         <h3 className="doc__info-price-text">{`${item.price} грн`}</h3>
                         <button disabled={!this.props.user.isAuthenticated} className='doc__info-price-button'
-                                onClick={()=>this.makeAppoinment(item)}>Записатися</button>
+                                onClick={() => this.makeAppoinment(item)}>Записатися
+                        </button>
                     </div>
                 </div>
             </div>

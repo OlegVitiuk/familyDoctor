@@ -70,6 +70,9 @@ span, h1, h2, h3, h4, a {
 .center {
   text-align: center; }
 
+.star-special {
+  font-size: 17px; }
+
 @font-face {
   font-family: "Flaticon";
   src: url("../fonts/Flaticon.woff") format("embedded-opentype"), url("../fonts/Flaticon.woff") format("woff"), url("../fonts/Flaticon.ttf") format("truetype"), url("../fonts/Flaticon.svg#Flaticon") format("svg");
@@ -265,11 +268,31 @@ table {
   border: 1px solid #e0e0e0;
   flex-direction: column;
   width: 66.5%;
-  margin: 10px 0; }
+  margin: 10px 0;
+  position: relative; }
   .doc__header {
     display: flex;
     border-bottom: 1px solid #e0e0e0;
     padding: 0 30px 20px; }
+    .doc__header-rating {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      right: 15px;
+      top: 15px; }
+      .doc__header-rating-content {
+        display: flex; }
+      .doc__header-rating-value {
+        font-size: 17px; }
+      .doc__header-rating-text {
+        margin-right: 4px;
+        font-size: 16px;
+        font-family: 'ProximaNova-SemiBold',sans-serif; }
+      .doc__header-rating-reviews {
+        text-align: center;
+        line-height: 14px;
+        margin-top: 3px;
+        color: #2a87d0; }
     .doc__header-img {
       margin-right: 30px;
       text-align: center;
@@ -288,6 +311,8 @@ table {
         line-height: 32px;
         font-weight: 600;
         color: #1e88e5; }
+        .doc__header-content-name:hover {
+          color: rgba(30, 136, 229, 0.75); }
       .doc__header-content-type {
         font-size: 16px;
         line-height: 20px;
