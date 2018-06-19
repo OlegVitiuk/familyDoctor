@@ -6,7 +6,7 @@ import {history} from 'stores/store';
 import {connect} from 'react-redux';
 import {getAllClinics} from "actions/clinics";
 import {setAuthorizationToken} from "utils/index";
-import {SET_AUTHORIZATON, SET_USER} from "constants/index";
+import {SET_AUTHORIZATON, SET_USER, FILTER_DOCTORS} from "constants/index";
 import {getAllDoctors} from "actions/doctor";
 import {uniqBy} from 'lodash';
 import Select from 'react-select';
@@ -25,7 +25,7 @@ class TopHeader extends React.Component {
     };
 
     state = {
-        filterOptions: {}
+        filterOptions: []
     };
 
     componentDidMount() {
@@ -36,12 +36,39 @@ class TopHeader extends React.Component {
     }
 
     setFilterOption = (selectedOption, filterType) => {
-        this.setState((prevState) => ({
-            filterOptions: {
-                ...prevState.filterOptions,
-                [filterType]: selectedOption
+        const config = [
+            {
+                name: 'doctorSpeciality',
+                value: 'type'
+            },
+            {
+                name: 'clinicDestination',
+                value: 'destination'
+            },
+            {
+                name: 'region',
+                value: 'adress.region'
+            },
+            {
+                name: 'rating',
+                value: 'rating'
+            }];
+        let correctFilterType = '';
+        config.forEach(item => {
+                if (item.name === filterType) {
+                    correctFilterType = item.value;
+                }
             }
-        }));
+        )
+        this.setState((prevState) => ({
+            filterOptions: [
+                ...prevState.filterOptions,
+                {
+                    nameOfField: correctFilterType,
+                    value: selectedOption.value
+                }
+            ]
+        }), () => this.props.dispatch({type: FILTER_DOCTORS, filterOptions: this.state.filterOptions}));
     }
 
     topHeaderClick(item) {
@@ -163,7 +190,7 @@ class TopHeader extends React.Component {
                     placeholder={<div className='topheader__filter-item-select-placeholder'>{item.text}</div>}
                     options={item.items}
                     className={`topheader__filter-item-select ${item.specialClass ? item.specialClass : ''}`}
-                    value={this.state.filterOptions[item.name]}
+                    value={this.state.filterOptions[0] && this.state.filterOptions[0].value}
                     onChange={(selectedOption) => this.setFilterOption(selectedOption, item.name)}
                 />
             </div>

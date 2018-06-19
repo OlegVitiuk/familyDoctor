@@ -248,7 +248,7 @@ table {
       width: 225px; }
       .topheader__filter-item-select-bigger {
         width: 400px; }
-      .topheader__filter-item-select-placeholder, .topheader__filter-item-select-value {
+      .topheader__filter-item-select-placeholder {
         font-size: 22px;
         line-height: 27px;
         background: none;

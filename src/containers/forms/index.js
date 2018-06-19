@@ -5,28 +5,31 @@ import Registration from './Registration';
 import Appoinment from './Appoinment';
 import {history} from '../../stores/store';
 
-export default class FormsContainer extends React.Component{
-    constructor(props){
+export default class FormsContainer extends React.Component {
+    constructor(props) {
         super(props);
 
-        this.forms ={
+        this.forms = {
             login: <Login closeForm={this.closeForm} history={history}/>,
             registration: <Registration closeForm={this.closeForm}/>,
             appoinment: <Appoinment closeForm={this.closeForm}/>
         }
     }
 
-    componentWillMount(){
+    componentWillMount() {
         history.push(`${history.location.pathname}`);
     }
 
-    closeForm = () =>{
+    closeForm = () => {
         history.push(`${history.location.pathname}`);
     }
 
-    render(){
-        if(history.location.hash.length) {
+    render() {
+        if (history.location.hash.length) {
             const activeForm = history.location.hash.slice(1);
+            if (activeForm) {
+                window.scrollTo(0, 0);
+            }
 
             return (
                 <div className="file-form__blackout">

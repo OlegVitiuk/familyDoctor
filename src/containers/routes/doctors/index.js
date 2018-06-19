@@ -11,17 +11,19 @@ class Doctors extends React.Component {
     };
 
     static defaultProps = {
-        doctors: []
+        doctor: {},
     }
 
+
     render() {
-        const {clinics, user, dispatch} = this.props;
+        const {clinics, user, dispatch, doctor} = this.props;
+        const correctItems = doctor.filterItems.length ? doctor.filterItems : doctor.items;
         return (
             <div className='doctors'>
                 <h1 className="doc__list-title">Лікарі в Києві</h1>
                 <div className='doc__list'>
                     {
-                        this.props.doctors.map(doctor => (
+                        correctItems.map(doctor => (
                             <Doctor key={doctor["_id"]} item={doctor} clinics={clinics} user={user}
                                     dispatch={dispatch}/>
                         ))
@@ -33,7 +35,7 @@ class Doctors extends React.Component {
 }
 
 export default connect(state => ({
-    doctors: state.doctor.items,
+    doctor: state.doctor,
     clinics: state.clinics,
     user: state.user
 }))(Doctors)
