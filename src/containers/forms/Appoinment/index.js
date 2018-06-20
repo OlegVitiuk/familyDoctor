@@ -7,6 +7,9 @@ import DatePicker from "../../components/render/Date";
 import Select from "../../components/render/Select";
 import {required} from "../../../utils/formUtils";
 import {connect} from "react-redux";
+import {getUserInfo} from "api/user";
+import store from "../../../stores/store";
+import {SET_USER} from 'constants/index';
 
 class Appoinment extends React.Component {
 
@@ -36,7 +39,11 @@ class Appoinment extends React.Component {
                 ...values
             }
         };
-        addAppoinment(data).catch(res => console.log(res));
+        addAppoinment(data).then(() => {
+            getUserInfo(data.token).then((user) => {
+                store.dispatch({type: SET_USER, user})
+            });
+        }).catch(res => console.log(res));
         this.props.closeForm();
     }
 
